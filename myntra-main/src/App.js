@@ -1,10 +1,11 @@
 import Address from "./components/Address/Address";
 import Cart from "./components/Cart/Cart";
+import CartFoot from "./components/Cart/CartFoot";
 
 function App() {
   return (
     <div>
-<Cart/>
+      <Address />
     </div>
   );
 }

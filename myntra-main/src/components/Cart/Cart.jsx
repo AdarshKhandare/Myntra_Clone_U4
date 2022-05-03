@@ -54,7 +54,7 @@ import CartRightS from "./CartRight";
 const Cart = () => {
   return (
     <Container>
-      <CartNav />
+      <CartNav color="20bd99" />
       <CartItems>
         <CartLeft>
           <AddressDiv>
