@@ -8,9 +8,11 @@ import { BookmarkBorderOutlined, CloseOutlined, DiscountOutlined, LocalOfferOutl
 import truck from "../../Images/truck.webp";
 import myntraLogo from "../../Images/myntraLogo.png";
 import secure from "../../Images/secure.png";
+import allpamentimage from "../../Images/allpamentimage.png";
 import {
   AddressCheckout,
   AddressDiv,
+  AllPriceDiv,
   AppCou,
   ApplyButton,
   ApplyCoupondiv,
@@ -18,14 +20,26 @@ import {
   AvaOffer,
   BagCheckout,
   Brand,
+  CartFooter,
   CartItemDiv,
   CartItems,
   CartLeft,
   CartRight,
   ChangeButton,
+  ContactUs,
   Container,
+  CoupDis,
+  CoupDisDiv,
+  CoupDisrs,
   CouponApplyDiv,
+  CoviFee,
+  CoviFeediv,
+  CoviFeeKM,
+  CoviFeers,
   DeliverTo,
+  Dmrp,
+  DmrpDiv,
+  Dmrprs,
   DotsCheckout,
   Filter,
   Filtercontainer,
@@ -49,14 +63,25 @@ import {
   NoConviDiv,
   Oprice,
   PaymentCheckout,
+  PaymentImg,
   PercentOff,
+  PlaceorderButton,
+  PlaceorderDiv,
   Price,
+  PriceDetailsT,
   PriceDis,
   RButton,
   RemoveButtonDiv,
   SecureLogo,
   SecureN,
+  Tmrp,
+  TmrpDiv,
+  Tmrprs,
   TopLA,
+  TotalAmount,
+  TotalAmountdiv,
+  TotalAmountrs,
+  TotalPriceDiv,
   WishListItem,
   WishName,
 } from "./Cart.element";
@@ -193,7 +218,7 @@ const Cart = () => {
             </ItemInfoDiv>
             <RemoveButtonDiv>
               <RButton>
-                <CloseOutlined />
+                <CloseOutlined sx={{ width: "25px", height: "25px" }} />
               </RButton>
             </RemoveButtonDiv>
           </CartItemDiv>
@@ -203,18 +228,51 @@ const Cart = () => {
           </WishListItem>
         </CartLeft>
         <CartRight>
-
-            <CouponApplyDiv>
-                <NameC>Coupons</NameC>
-                <ApplyCoupondiv>
-                    <LocalOfferOutlined/>
-                    <AppCou>Apply Coupons</AppCou>
-                    <ApplyButton>APPLY</ApplyButton>
-                </ApplyCoupondiv>
-            </CouponApplyDiv>
+          <CouponApplyDiv>
+            <NameC>Coupons</NameC>
+            <ApplyCoupondiv>
+              <LocalOfferOutlined sx={{ width: "25px", height: "25px" }} />
+              <AppCou>Apply Coupons</AppCou>
+              <ApplyButton>APPLY</ApplyButton>
+            </ApplyCoupondiv>
+          </CouponApplyDiv>
+          <AllPriceDiv>
+            <PriceDetailsT>PRICE DETAILS (1 items)</PriceDetailsT>
+            <TmrpDiv>
+              <Tmrp>TOTAL MRP</Tmrp>
+              <Tmrprs>₹1,200</Tmrprs>
+            </TmrpDiv>
+            <DmrpDiv>
+              <Dmrp>Discount on MRP</Dmrp>
+              <Dmrprs>-₹1,600</Dmrprs>
+            </DmrpDiv>
+            <CoupDisDiv>
+              <CoupDis>Coupon Discount</CoupDis>
+              <CoupDisrs>Apply Coupon</CoupDisrs>
+            </CoupDisDiv>
+            <CoviFeediv>
+              <CoviFee>Convenience Fee</CoviFee>
+              <CoviFeeKM>Know More</CoviFeeKM>
+              <CoviFeers>FREE</CoviFeers>
+            </CoviFeediv>
+          </AllPriceDiv>
+          <TotalPriceDiv>
+            <TotalAmountdiv>
+              <TotalAmount>Total Amount</TotalAmount>
+              <TotalAmountrs>₹1,200</TotalAmountrs>
+            </TotalAmountdiv>
+            <PlaceorderDiv>
+              <PlaceorderButton>PLACE ORDER</PlaceorderButton>
+            </PlaceorderDiv>
+          </TotalPriceDiv>
         </CartRight>
       </CartItems>
-      <Hr/>
+      <Hr />
+
+      <CartFooter>
+        <PaymentImg src={allpamentimage} />
+        <ContactUs>Need Help? Contact Us</ContactUs>
+      </CartFooter>
     </Container>
   );
 };
