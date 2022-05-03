@@ -4,43 +4,25 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { BookmarkBorderOutlined, CloseOutlined, DiscountOutlined, LocalOfferOutlined } from "@mui/icons-material";
-import truck from "../../Images/truck.webp";
-import myntraLogo from "../../Images/myntraLogo.png";
-import secure from "../../Images/secure.png";
-import allpamentimage from "../../Images/allpamentimage.png";
 import {
-  AddressCheckout,
+  BookmarkBorderOutlined,
+  CloseOutlined,
+  DiscountOutlined,
+  LocalOfferOutlined,
+} from "@mui/icons-material";
+import truck from "../../Images/truck.webp";
+
+import {
   AddressDiv,
-  AllPriceDiv,
-  AppCou,
-  ApplyButton,
-  ApplyCoupondiv,
   AvailableofferDiv,
   AvaOffer,
-  BagCheckout,
   Brand,
-  CartFooter,
   CartItemDiv,
   CartItems,
   CartLeft,
-  CartRight,
   ChangeButton,
-  ContactUs,
   Container,
-  CoupDis,
-  CoupDisDiv,
-  CoupDisrs,
-  CouponApplyDiv,
-  CoviFee,
-  CoviFeediv,
-  CoviFeeKM,
-  CoviFeers,
   DeliverTo,
-  Dmrp,
-  DmrpDiv,
-  Dmrprs,
-  DotsCheckout,
   Filter,
   Filtercontainer,
   FilterSize,
@@ -51,60 +33,28 @@ import {
   Imagediv,
   ItemIamge,
   ItemInfoDiv,
-  Logo,
   LogoTruck,
   Name,
-  NameC,
-  NavCheckOutSteps,
-  NavContainer,
-  NavLogo,
-  NavSecure,
   NoConvi,
   NoConviDiv,
   Oprice,
-  PaymentCheckout,
-  PaymentImg,
   PercentOff,
-  PlaceorderButton,
-  PlaceorderDiv,
   Price,
-  PriceDetailsT,
   PriceDis,
   RButton,
   RemoveButtonDiv,
-  SecureLogo,
-  SecureN,
-  Tmrp,
-  TmrpDiv,
-  Tmrprs,
   TopLA,
-  TotalAmount,
-  TotalAmountdiv,
-  TotalAmountrs,
-  TotalPriceDiv,
   WishListItem,
   WishName,
 } from "./Cart.element";
+import CartNav from "./CartNav";
+import CartFoot from "./CartFoot";
+import CartRightS from "./CartRight";
 
 const Cart = () => {
   return (
     <Container>
-      <NavContainer>
-        <NavLogo>
-          <Logo src={myntraLogo} />
-        </NavLogo>
-        <NavCheckOutSteps>
-          <BagCheckout>BAG</BagCheckout>
-          <DotsCheckout>---------</DotsCheckout>
-          <AddressCheckout>ADDRESS</AddressCheckout>
-          <DotsCheckout>---------</DotsCheckout>
-          <PaymentCheckout>PAYMENT</PaymentCheckout>
-        </NavCheckOutSteps>
-        <NavSecure>
-          <SecureLogo src={secure} />
-          <SecureN>100% SECURE</SecureN>
-        </NavSecure>
-      </NavContainer>
+      <CartNav />
       <CartItems>
         <CartLeft>
           <AddressDiv>
@@ -227,52 +177,10 @@ const Cart = () => {
             <WishName>Add More From WishList</WishName>
           </WishListItem>
         </CartLeft>
-        <CartRight>
-          <CouponApplyDiv>
-            <NameC>Coupons</NameC>
-            <ApplyCoupondiv>
-              <LocalOfferOutlined sx={{ width: "25px", height: "25px" }} />
-              <AppCou>Apply Coupons</AppCou>
-              <ApplyButton>APPLY</ApplyButton>
-            </ApplyCoupondiv>
-          </CouponApplyDiv>
-          <AllPriceDiv>
-            <PriceDetailsT>PRICE DETAILS (1 items)</PriceDetailsT>
-            <TmrpDiv>
-              <Tmrp>TOTAL MRP</Tmrp>
-              <Tmrprs>₹1,200</Tmrprs>
-            </TmrpDiv>
-            <DmrpDiv>
-              <Dmrp>Discount on MRP</Dmrp>
-              <Dmrprs>-₹1,600</Dmrprs>
-            </DmrpDiv>
-            <CoupDisDiv>
-              <CoupDis>Coupon Discount</CoupDis>
-              <CoupDisrs>Apply Coupon</CoupDisrs>
-            </CoupDisDiv>
-            <CoviFeediv>
-              <CoviFee>Convenience Fee</CoviFee>
-              <CoviFeeKM>Know More</CoviFeeKM>
-              <CoviFeers>FREE</CoviFeers>
-            </CoviFeediv>
-          </AllPriceDiv>
-          <TotalPriceDiv>
-            <TotalAmountdiv>
-              <TotalAmount>Total Amount</TotalAmount>
-              <TotalAmountrs>₹1,200</TotalAmountrs>
-            </TotalAmountdiv>
-            <PlaceorderDiv>
-              <PlaceorderButton>PLACE ORDER</PlaceorderButton>
-            </PlaceorderDiv>
-          </TotalPriceDiv>
-        </CartRight>
+        <CartRightS />
       </CartItems>
       <Hr />
-
-      <CartFooter>
-        <PaymentImg src={allpamentimage} />
-        <ContactUs>Need Help? Contact Us</ContactUs>
-      </CartFooter>
+      <CartFoot />
     </Container>
   );
 };
