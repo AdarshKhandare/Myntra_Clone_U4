@@ -1,12 +1,34 @@
-import React from 'react'
-import { AddressCheckoutO, ButtonDiv, Container, ContiShop, DotsCheckoutO, OrderC, OrderCBS, OrderCM, OrderConfirmdiv, PaymentCheckoutO, ViewOrder } from './OrderConfirm.element'
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-import CartNav from "../Cart/CartNav"
+import React from "react";
+import {
+  AddressCheckoutO,
+  ButtonDiv,
+  Container,
+  ContiShop,
+  DotsCheckoutO,
+  OrderC,
+  OrderCBS,
+  OrderCM,
+  OrderConfirmdiv,
+  PaymentCheckoutO,
+  ViewOrder,
+} from "./OrderConfirm.element";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import { useNavigate, Link } from "react-router-dom";
 import CartFoot from "../Cart/CartFoot";
-import {  BagCheckout, Logo, NavCheckOutSteps, NavContainer, NavLogo, NavSecure,  SecureLogo, SecureN } from '../Cart/CartNav.element';
+import {
+  BagCheckout,
+  Logo,
+  NavCheckOutSteps,
+  NavContainer,
+  NavLogo,
+  NavSecure,
+  SecureLogo,
+  SecureN,
+} from "../Cart/CartNav.element";
 import myntraLogo from "../../Images/myntraLogo.png";
 import secure from "../../Images/secure.png";
 const OrderConfirm = () => {
+  // const navigate = useNavigate();
   return (
     <Container>
       <NavContainer>
@@ -37,6 +59,10 @@ const OrderConfirm = () => {
           </OrderCM>
           <ButtonDiv>
             <ContiShop>CONTINUE SHOPPING</ContiShop>
+            {/* onClick=
+            {() => {
+              navigate("/cart");
+            }} */}
             <ViewOrder>VIEW ORDER</ViewOrder>
           </ButtonDiv>
         </OrderCBS>
@@ -44,6 +70,6 @@ const OrderConfirm = () => {
       <CartFoot />
     </Container>
   );
-}
+};
 
-export default OrderConfirm
+export default OrderConfirm;

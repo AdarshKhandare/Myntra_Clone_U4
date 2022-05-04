@@ -4,7 +4,7 @@ export const Container = styled.div`
 
 `;
 export const OrderConfirmdiv = styled.div`
-  margin-bottom: 150px;
+  margin-bottom: 115px;
  
 `;
 export const OrderCBS = styled.div`
