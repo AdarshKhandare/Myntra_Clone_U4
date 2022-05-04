@@ -161,3 +161,18 @@ export const FormRightDiv = styled.div`
   width: 40%;
   padding: 24px 0 0 16px;
 `;
+
+export const PlaceorderDiv = styled.div`
+  width: 100%;
+`;
+export const PlaceorderButton = styled.button`
+  cursor: pointer;
+  background-color: #ff3f6c;
+  color: #fff;
+  width: 100%;
+  border: none;
+  height: 40px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+`;

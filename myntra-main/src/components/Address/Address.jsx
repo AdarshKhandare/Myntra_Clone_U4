@@ -19,6 +19,8 @@ import {
   Headings,
   NameInput,
   PinCodeInput,
+  PlaceorderButton,
+  PlaceorderDiv,
   SaveAddressdiv,
   SaveHome,
   SaveWork,
@@ -39,7 +41,27 @@ import {
   SecureLogo,
   SecureN,
 } from "../Cart/CartNav.element";
-import { AllPriceDiv, CoupDis, CoupDisDiv, CoupDisrs, CoviFee, CoviFeediv, CoviFeeKM, CoviFeers, Dmrp, DmrpDiv, Dmrprs, PriceDetailsT, Tmrp, TmrpDiv, Tmrprs, TotalAmount, TotalAmountdiv, TotalAmountrs, TotalPriceDiv } from "../Cart/CartRight.element";
+import {
+  AllPriceDiv,
+  CoupDis,
+  CoupDisDiv,
+  CoupDisrs,
+  CoviFee,
+  CoviFeediv,
+  CoviFeeKM,
+  CoviFeers,
+  Dmrp,
+  DmrpDiv,
+  Dmrprs,
+  PriceDetailsT,
+  Tmrp,
+  TmrpDiv,
+  Tmrprs,
+  TotalAmount,
+  TotalAmountdiv,
+  TotalAmountrs,
+  TotalPriceDiv,
+} from "../Cart/CartRight.element";
 const Address = () => {
   return (
     <Container>
@@ -88,31 +110,34 @@ const Address = () => {
           </FormDiv>
         </FormLeftdiv>
         <FormRightDiv>
-                <AllPriceDiv>
-        <PriceDetailsT>PRICE DETAILS (1 items)</PriceDetailsT>
-        <TmrpDiv>
-          <Tmrp>TOTAL MRP</Tmrp>
-          <Tmrprs>₹1,200</Tmrprs>
-        </TmrpDiv>
-        <DmrpDiv>
-          <Dmrp>Discount on MRP</Dmrp>
-          <Dmrprs>-₹1,600</Dmrprs>
-        </DmrpDiv>
-        <CoupDisDiv>
-          <CoupDis>Coupon Discount</CoupDis>
-          <CoupDisrs>Apply Coupon</CoupDisrs>
-        </CoupDisDiv>
-        <CoviFeediv>
-          <CoviFee>Convenience Fee</CoviFee>
-          <CoviFeeKM>Know More</CoviFeeKM>
-          <CoviFeers>FREE</CoviFeers>
-        </CoviFeediv>
-      </AllPriceDiv>
-      <TotalPriceDiv>
-        <TotalAmountdiv>
-          <TotalAmount>Total Amount</TotalAmount>
-          <TotalAmountrs>₹1,200</TotalAmountrs>
-        </TotalAmountdiv>
+          <AllPriceDiv>
+            <PriceDetailsT>PRICE DETAILS (1 items)</PriceDetailsT>
+            <TmrpDiv>
+              <Tmrp>TOTAL MRP</Tmrp>
+              <Tmrprs>₹1,200</Tmrprs>
+            </TmrpDiv>
+            <DmrpDiv>
+              <Dmrp>Discount on MRP</Dmrp>
+              <Dmrprs>-₹1,600</Dmrprs>
+            </DmrpDiv>
+            <CoupDisDiv>
+              <CoupDis>Coupon Discount</CoupDis>
+              <CoupDisrs>Apply Coupon</CoupDisrs>
+            </CoupDisDiv>
+            <CoviFeediv>
+              <CoviFee>Convenience Fee</CoviFee>
+              <CoviFeeKM>Know More</CoviFeeKM>
+              <CoviFeers>FREE</CoviFeers>
+            </CoviFeediv>
+          </AllPriceDiv>
+          <TotalPriceDiv>
+            <TotalAmountdiv>
+              <TotalAmount>Total Amount</TotalAmount>
+              <TotalAmountrs>₹1,200</TotalAmountrs>
+            </TotalAmountdiv>
+            <PlaceorderDiv>
+              <PlaceorderButton>PLACE ORDER</PlaceorderButton>
+            </PlaceorderDiv>
           </TotalPriceDiv>
         </FormRightDiv>
       </AddressFormDiv>

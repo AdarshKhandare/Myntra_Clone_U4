@@ -1,11 +1,12 @@
 import Address from "./components/Address/Address";
 import Cart from "./components/Cart/Cart";
-import CartFoot from "./components/Cart/CartFoot";
+import OrderConfirm from "./components/Payment/OrderConfirm";
+import Payment from "./components/Payment/Payment";
 
 function App() {
   return (
     <div>
-      <Address />
+      <OrderConfirm />
     </div>
   );
 }
