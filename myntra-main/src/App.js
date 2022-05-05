@@ -9,10 +9,13 @@ import RegisterForm from "./components/Register/RegisterForm";
 function App() {
   return (
     <Routes>
-      <Route path="/cart" element={<Cart />} />
+      {/* <Route path="/cart" element={<Cart />} /> */}
       <Route path="/" element={<RegisterForm />} />
       <Route path="/login" element={<Login />} />
     </Routes>
+    // <>
+    //   <Login />
+    // </>
   );
 }
 

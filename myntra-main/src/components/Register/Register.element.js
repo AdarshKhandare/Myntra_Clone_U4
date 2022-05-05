@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-export const Containerr = styled.div`
+
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -37,13 +38,16 @@ export const SubmitButton = styled.button`
   margin-bottom: 30px;
 `;
 
-// Login._jsx
+// Register._jsx
 
 export const FormInputDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 300px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+
 `;
+
+
 
 export const Span = styled.span`
   font-size: 12px;

@@ -1,94 +1,95 @@
-import React, { useState } from "react";
-import registerbanner from "../../Images/registerbanner.webp";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import registerbanner from "../../Images/registerbanner.webp";
 import { useNavigate } from "react-router-dom";
+import LoginInput from "./LoginInput";
 import {
   BannerImg,
-  Container,
-  EmailR,
-  FormDiv,
-  FormR,
-  HeadingRegister,
-  ImageDiv,
-  PasswordR,
-  RegisterFull,
-  RegisterWindow,
-  SubmitR,
+  Containerr,
+  Form,
+  RegiName,
+  SubmitButton,
 } from "./Login.element";
+
 const Login = () => {
-  const notify = () => toast("Login Suceessfull!");
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
+  const dispatch = useDispatch();
+  // const [values, setValues] = useState({
+  //   username: "",
+  //   email: "",
+  //   birthday: "",
+  //   password: "",
+  //   confirmPassword: "",
+  // });
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const getData = async () => {
-    try {
-      let res = await fetch("http://localhost:5000/registeruser")
+  const inputs = [
+    {
+      id: 1,
+      name: "email",
+      type: "email",
+      placeholder: "Email",
+      label: "Email",
+      required: true,
+    },
 
-      let data = await res.json();
+    {
+      id: 2,
+      name: "password",
+      type: "password",
+      placeholder: "Password",
+      label: "Password",
+      required: true,
+    },
+  ];
 
-      if(email === data[0].email){
-         setInterval(function () {
-           navigate("/cart");
-           toast("Login Succrss")
-         }, 2000);
-      }
-      else{
-        console.log("furre")
-      }
-    } catch (err) {
-      console.log(err);
+  const users = useSelector((state) => state.users);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const payload = users.find((user) => user.username === username && user.password === password);
+
+    if (payload) {
+      dispatch({
+        type: "LOGIN",
+        username,password,
+      });
+      alert("Login successful")
+    } else {
+      dispatch({
+        type: "LOGIN_FAIL",
+        payload,
+      });
+      // alert("Wrong username Or Password");
     }
   };
-  const handleSubmit = (e ) => {
-    e.preventDefault();
-    getData();
- 
 
-
-  };
   return (
-    <Container>
-      <RegisterFull>
-        <RegisterWindow>
-          <ImageDiv>
-            <BannerImg src={registerbanner} />
-          </ImageDiv>
-          <FormDiv>
-            <HeadingRegister>LOGIN</HeadingRegister>
-            <FormR onSubmit={handleSubmit}>
-              <EmailR
-                value={email}
-                placeholder="Enter Your Email Number"
-                name="email"
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <PasswordR
-                value={password}
-                placeholder="Enter Your Password"
-                name="password"
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <SubmitR type="submit" onClick={notify} />
-              <ToastContainer
-                position="top-right"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-              />
-              {/* Same as */}
-              <ToastContainer />
-            </FormR>
-          </FormDiv>
-        </RegisterWindow>
-      </RegisterFull>
-    </Container>
+    <Containerr className="app">
+      <BannerImg src={registerbanner} alt="" />
+      <Form onSubmit={handleSubmit}>
+        <RegiName>LOGIN</RegiName>
+        <input
+          name="username"
+          type="text"
+          placeholder="Username"
+          required
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          name="password"
+          type="password"
+          placeholder="Password"
+          required
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <SubmitButton>Submit</SubmitButton>
+      </Form>
+    </Containerr>
   );
 };
 
