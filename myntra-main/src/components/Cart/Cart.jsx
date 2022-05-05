@@ -51,6 +51,7 @@ import CartNav from "./CartNav";
 import CartFoot from "./CartFoot";
 import CartRightS from "./CartRight";
 
+
 const Cart = () => {
   return (
     <Container>

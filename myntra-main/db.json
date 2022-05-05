@@ -1,0 +1,28 @@
+{
+  "registeruser": [
+    {
+      "name": "ada",
+      "mobilenum": "123",
+      "email": "123@gmail.com",
+      "password": "123",
+      "confirmpassword": "123",
+      "id": 1
+    },
+    {
+      "name": "bvbcvb",
+      "mobilenum": "08657587157",
+      "email": "11@gmail.com",
+      "password": "123",
+      "confirmpassword": "123",
+      "id": 2
+    },
+    {
+      "name": "1121",
+      "mobilenum": "1212",
+      "email": "kingadarsh313@gmail.com",
+      "password": "121",
+      "confirmpassword": "1212",
+      "id": 3
+    }
+  ]
+}
