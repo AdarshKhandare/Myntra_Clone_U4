@@ -1,0 +1,17 @@
+.mainDiv{
+    display: grid;
+    grid-template-columns: 100px 500px 500px 200px;
+    background-color: whitesmoke;
+    justify-content: space-around;
+    height: 80px;
+}
+.logo{
+    background-color: blue;
+    height:"100px"
+}
+.navlink{
+text-decoration: "none";
+padding: "5px";
+color:"black"
+
+}
