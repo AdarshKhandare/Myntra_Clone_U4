@@ -37,6 +37,7 @@ export const ButtonDiv = styled.div`
 export const ContiShop = styled.button`
   padding: 15px;
   font-size: 14px;
+  color: black;
   background-color: #fff;
   border: 0.5px solid #eaeaec;
   border-radius: 4px;

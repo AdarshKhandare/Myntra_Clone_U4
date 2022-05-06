@@ -1,12 +1,16 @@
 import styled from "styled-components";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+
+`;
 
 export const CartItems = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 12px;
+  margin-bottom: 40px;
+
 `;
 export const CartLeft = styled.div`
   width: 60%;
@@ -15,7 +19,7 @@ export const CartLeft = styled.div`
   gap: 20px;
 `;
 export const AddressDiv = styled.div`
-  padding: 16px;
+  padding: 4px 16px;
   border-radius: 4px;
   border: 1px solid #eaeaec;
   display: flex;
@@ -26,7 +30,7 @@ export const AddressDiv = styled.div`
 `;
 export const DeliverTo = styled.p``;
 export const ChangeButton = styled.button`
-  padding: 8px 16px;
+  width: 25%;
   border: 1px solid #ff3f6c;
   border-radius: 4px;
   margin-right: 0;
@@ -41,6 +45,7 @@ cursor: pointer;
   }
 `;
 export const AvailableofferDiv = styled.div`
+  padding: 8px 16px;
   margin-left: 30%;
   border-radius: 4px;
   border: 1px solid #eaeaec;

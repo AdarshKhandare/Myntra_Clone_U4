@@ -9,15 +9,17 @@ export const CartFooter = styled.div`
 `;
 
 export const PaymentImg = styled.img`
-  width: 60%;
+  width: 70%;
 `;
 
-export const ContactUs = styled.button`
+export const ContactUs = styled.p`
   border: none;
+  font-size: 14px;
   background-color: #fff;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  margin-right: 300px;
+  margin-right: 250px;
+  color: black;
 
   &:hover {
     border-bottom: 1px solid black;

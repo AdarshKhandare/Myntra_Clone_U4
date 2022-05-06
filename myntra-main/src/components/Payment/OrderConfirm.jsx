@@ -28,7 +28,11 @@ import {
 import myntraLogo from "../../Images/myntraLogo.png";
 import secure from "../../Images/secure.png";
 const OrderConfirm = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
+
+  const contiShop = ()=>{
+    navigate("/")
+  }
   return (
     <Container>
       <NavContainer>
@@ -58,12 +62,7 @@ const OrderConfirm = () => {
             email/SMS shortly with the expected delivery date for your items.
           </OrderCM>
           <ButtonDiv>
-            <ContiShop>CONTINUE SHOPPING</ContiShop>
-            {/* onClick=
-            {() => {
-              navigate("/cart");
-            }} */}
-            <ViewOrder>VIEW ORDER</ViewOrder>
+            <ContiShop onClick={contiShop}>CONTINUE SHOPPING</ContiShop>
           </ButtonDiv>
         </OrderCBS>
       </OrderConfirmdiv>

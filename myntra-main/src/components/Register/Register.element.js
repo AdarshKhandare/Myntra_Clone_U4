@@ -38,17 +38,12 @@ export const SubmitButton = styled.button`
   margin-bottom: 30px;
 `;
 
-// Register._jsx
-
 export const FormInputDiv = styled.div`
     display: flex;
     flex-direction: column;
     width: 300px;
 
 `;
-
-
-
 export const Span = styled.span`
   font-size: 12px;
   padding: 3px;

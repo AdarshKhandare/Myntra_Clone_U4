@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "../Register/register.css";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
+import {toast}  from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 import registerbanner from "../../Images/registerbanner.webp";
 import { useNavigate } from "react-router-dom";
 import {
@@ -28,11 +29,16 @@ const Login = () => {
     e.preventDefault();
     try {
       const user = await signInWithEmailAndPassword(auth, email, password);
-      alert("Login successful");
+      toast.dark("LOGIN SUCCESSFULL (enjoy)", {
+        theme: "colored",
+      });
       navigate("/cart");
       console.log(user);
     } catch (error) {
       console.log(error.message);
+      toast.error("LOGIN FAILED (check your email or password)", {
+        theme: "colored",
+      });
     }
   };
 
@@ -61,6 +67,8 @@ const Login = () => {
         />
         <SubmitButton>Submit</SubmitButton>
       </Form>
+      <ToastContainer />
+      <ToastContainer />
     </Containerr>
   );
 };

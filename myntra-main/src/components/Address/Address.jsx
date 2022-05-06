@@ -62,7 +62,14 @@ import {
   TotalAmountrs,
   TotalPriceDiv,
 } from "../Cart/CartRight.element";
+import { useNavigate } from "react-router-dom";
 const Address = () => {
+
+  const navigate = useNavigate();
+  const goToPayment = ()=>{
+
+    navigate("/payment");
+  }
   return (
     <Container>
       <NavContainer>
@@ -100,7 +107,6 @@ const Address = () => {
             </Addressdiv>
             <SaveAddressdiv>
               <Headings>Save Address as:</Headings>
-
               <SaveHome>Home</SaveHome>
               <SaveWork>Work</SaveWork>
             </SaveAddressdiv>
@@ -136,7 +142,7 @@ const Address = () => {
               <TotalAmountrs>₹1,200</TotalAmountrs>
             </TotalAmountdiv>
             <PlaceorderDiv>
-              <PlaceorderButton>PLACE ORDER</PlaceorderButton>
+              <PlaceorderButton onClick={goToPayment}>PLACE ORDER</PlaceorderButton>
             </PlaceorderDiv>
           </TotalPriceDiv>
         </FormRightDiv>

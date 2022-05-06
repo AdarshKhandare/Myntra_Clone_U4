@@ -1,8 +1,20 @@
 import { LocalOfferOutlined } from '@mui/icons-material';
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 import { AllPriceDiv, AppCou, ApplyButton, ApplyCoupondiv, CartRight, CoupDis, CoupDisDiv, CoupDisrs, CouponApplyDiv, CoviFee, CoviFeediv, CoviFeeKM, CoviFeers, Dmrp, DmrpDiv, Dmrprs, NameC, PlaceorderButton, PlaceorderDiv, PriceDetailsT, Tmrp, TmrpDiv, Tmrprs, TotalAmount, TotalAmountdiv, TotalAmountrs, TotalPriceDiv } from './CartRight.element';
-
+import {auth} from "../../firebse/firebase-config"
 const CartRightS = () => {
+  const navigate = useNavigate();
+
+  const placeOrder = () => {
+    if(auth){
+      navigate("/address")
+      console.log("useravailabel",auth)
+    }
+    else{
+      navigate("/register")
+    }
+  }
   return (
     <CartRight>
       <CouponApplyDiv>
@@ -28,7 +40,7 @@ const CartRightS = () => {
           <CoupDisrs>Apply Coupon</CoupDisrs>
         </CoupDisDiv>
         <CoviFeediv>
-          <CoviFee>Convenience Fee</CoviFee>
+          <CoviFee>ConvenienceFee</CoviFee>
           <CoviFeeKM>Know More</CoviFeeKM>
           <CoviFeers>FREE</CoviFeers>
         </CoviFeediv>
@@ -39,7 +51,7 @@ const CartRightS = () => {
           <TotalAmountrs>₹1,200</TotalAmountrs>
         </TotalAmountdiv>
         <PlaceorderDiv>
-          <PlaceorderButton>PLACE ORDER</PlaceorderButton>
+          <PlaceorderButton onClick={placeOrder}>PLACE ORDER</PlaceorderButton>
         </PlaceorderDiv>
       </TotalPriceDiv>
     </CartRight>

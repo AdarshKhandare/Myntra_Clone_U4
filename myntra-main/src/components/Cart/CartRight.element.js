@@ -24,14 +24,14 @@ export const ApplyCoupondiv = styled.div`
 `;
 
 export const AppCou = styled.p`
-  margin-right: 120px;
+  margin-right: 110px;
   font-weight: 600;
 `;
 export const ApplyButton = styled.button`
-  padding: 8px 16px;
+  width: 30%;
   border: 1px solid #ff3f6c;
   border-radius: 4px;
-  margin-right: 10px;
+  margin-right: 0px;
   color: #ff3f6c;
   background: #fff;
   font-size: 12px;
@@ -57,6 +57,8 @@ export const PriceDetailsT = styled.p`
 export const TmrpDiv = styled.div`
   display: flex;
   justify-content: space-between;
+  text-align: center;
+  align-items: center;
 `;
 export const Tmrp = styled.p``;
 export const Tmrprs = styled.p``;
@@ -71,6 +73,8 @@ export const Dmrprs = styled.p`
 export const CoupDisDiv = styled.div`
   display: flex;
   justify-content: space-between;
+  text-align: center;
+  align-items: center;
 `;
 export const CoupDis = styled.p``;
 export const CoupDisrs = styled.p`
@@ -79,16 +83,18 @@ export const CoupDisrs = styled.p`
 export const CoviFeediv = styled.div`
   display: flex;
   justify-content: space-between;
+  text-align: center;
+  align-items: center;
 `;
 export const CoviFee = styled.p``;
-export const CoviFeeKM = styled.button`
+export const CoviFeeKM = styled.p`
   border: none;
   background-color: #fff;
   cursor: pointer;
   color: #ff3f6c;
   font-weight: 700;
   font-size: 12px;
-  margin-right: 130px;
+  margin-right: 120px;
 `;
 export const CoviFeers = styled.p`
   color: #03a685;

@@ -16,7 +16,7 @@ export const FormDiv = styled.form`
   flex-direction: column;
   text-align: center;
   align-items: center;
-  gap: 20px;
+  gap: 5px;
 `;
 export const Headings = styled.p`
 font-size: 20px;
@@ -26,7 +26,7 @@ margin: 0;
 `
 export const ContactDetailsdiv = styled.div`
   border-radius: 4px;
-  padding: 8px;
+  padding: 8px 16px;
   border: 1px solid #eaeaec;
   display: flex;
   flex-direction: column;
@@ -49,7 +49,7 @@ export const ContactInput = styled.input`
 
 export const Addressdiv = styled.div`
   border-radius: 4px;
-  padding: 8px ;
+  padding: 8px 16px;
   border: 1px solid #eaeaec;
   display: flex;
   flex-direction: column;
@@ -100,8 +100,8 @@ export const SaveAddressdiv = styled.div`
   justify-content: space-around;
   align-items: center;
   text-align: center;
-  gap: 20px;
-  width: 74%;
+  gap: 25px;
+  width: 90%;
 `;
 export const SaveHome = styled.button`
   background-color: #fff;
@@ -110,6 +110,7 @@ export const SaveHome = styled.button`
   width: 80px;
   height: 40px;
   font-size: 14px;
+  color : gray;
 
   &:hover {
     background-color: #ff3f6c;
@@ -123,6 +124,7 @@ export const SaveWork = styled.button`
   width: 80px;
   height: 40px;
   font-size: 14px;
+  color: gray;
   &:hover {
     background-color: #ff3f6c;
     color: #fff;
@@ -132,7 +134,8 @@ export const ButtonDiv = styled.div`
   border-radius: 4px;
   padding: 8px 16px;
   border: 1px solid #eaeaec;
-  width: 74%;
+  width: 90%;
+  margin-bottom:20px;;
 `;
 
 

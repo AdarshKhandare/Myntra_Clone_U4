@@ -93,19 +93,21 @@ import {
   CurrencyRupeeOutlined,
   DiscountOutlined,
   PaymentsOutlined,
+  QrCodeScanner,
 } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
 
 
 
 const Payment = () => {
 
+  const navigate = useNavigate();
     const [creditCardNum, setCreditCardNum] = useState("#### #### #### ####");
     const [cardHolder, setCardHolder] = useState("Your Full Name");
     const [expireMonthYear, setExpireMonthYear] = useState("MM/YY");
     const [cvv, setCvv] = useState("CVV");
       const handleNum = (e) => {
         setCreditCardNum(e.target.rawValue);
-        // console.log(e.target.value);
       };
        const handleCardHolder = (e) => {
          setCardHolder(e.target.value);
@@ -120,6 +122,7 @@ const Payment = () => {
        };
        const handleSubmit = (e) => {
          console.log("Hello")
+         navigate("/orderconfirm");
        }
   return (
     <Container>
@@ -215,7 +218,9 @@ const Payment = () => {
                 <CardCD>Credit/Debit Card</CardCD>
               </CardCDdiv>
               <Upidiv>
-                <UpiIcon>UPI</UpiIcon>
+                <QrCodeScanner
+                  sx={{ width: "25px", height: "25px" }}
+                />
                 <Upi>GooglePay/PhonePay/Upi</Upi>
               </Upidiv>
               <Walletdiv>

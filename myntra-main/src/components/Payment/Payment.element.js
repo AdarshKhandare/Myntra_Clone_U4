@@ -85,13 +85,13 @@ export const Upidiv = styled.div`
   align-items: center;
 `;
 export const UpiIcon = styled.button`
-width:20px;
-height: 18px;
-font-size: 6px;
-text-align: center;
-align-items: center;
-
-`
+  width: 20px;
+  height: 18px;
+  font-size: 6px;
+  text-align: center;
+  align-items: center;
+  background-color: #eaeaec;
+`;
 export const Upi = styled.p`
   font-weight: 600;
 `;
@@ -141,7 +141,7 @@ export const PaymentMethodsInput = styled.div`
   padding: 10px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 15px;
 `;
 
 export const CardNumber = styled.input`
