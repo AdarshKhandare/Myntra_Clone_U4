@@ -10,7 +10,7 @@ span{
     width: 300px;
 }
 
-input:invalid[focused="true"]{
+/* input:invalid[focused="true"]{
     border: 1px solid red;
 }
 
@@ -23,7 +23,21 @@ input{
     margin: 10px 0px;
     border-radius: 5px;
     border: 1px solid gray;
+} */
+
+.inputtt:invalid[focused="true"]{
+    border: 1px solid red;
 }
+.inputtt:invalid[focused="true"] ~ span{
+    display: block;
+}
+.inputtt{
+    padding: 15px;
+    margin: 10px 0px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
 
 img{
 

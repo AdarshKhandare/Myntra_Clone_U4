@@ -1,147 +1,135 @@
-
-// import axios from "axios";
-// import { useNavigate } from "react-router-dom";
-// const RegisterForm = () => {
-//   const notify = () => toast("Register Suceessfull!");
-//   
-
-//   const handleChange = (e) => {
-//     // console.log(e.target.value);
-//     const inputName = e.target.name;
-//     setFormData({
-//       ...formData,
-//       [inputName]: e.target.value,
-//     });
-//   };
-//   const postData = async () => {
-//     try {
-//       let res = await fetch("http://localhost:5000/registeruser", {
-//         method: "POST",
-//         headers: { "content-type": "application/json" },
-//         body: JSON.stringify(formData),
-//       });
-
-//       let data = await res.json();
-//       console.log(data);
-//     } catch (err) {
-//       console.log(err);
-//     }
-//   };
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     postData();
-//     setInterval(function () {
-//       navigate("/login");
-//     }, 2000);
-//   };
-
-
 import { useState } from "react";
-import {useDispatch} from "react-redux"
+import { useDispatch } from "react-redux";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+} from "firebase/auth";
+import { auth } from "../../firebse/firebase-config";
 import "./register.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Register from "./Register";
 import registerbanner from "../../Images/registerbanner.webp";
 import { useNavigate } from "react-router-dom";
-import { BannerImg, Container, Form, RegiName, SubmitButton } from "./Register.element";
-
+import {
+  BannerImg,
+  Container,
+  Form,
+  RegiName,
+  SubmitButton,
+} from "./Register.element";
+import "./register.css";
+import { FormInputDiv, Input, Span } from "./Register.element";
 const RegisterForm = () => {
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
-  const [values, setValues] = useState({
-    username: "",
-    email: "",
-    birthday: "",
-    password: "",
-    confirmPassword: "",
-  });
-
-  const inputs = [
-    {
-      id: 1,
-      name: "username",
-      type: "text",
-      placeholder: "Username",
-      errorMessage:
-        "Username should be 3-16 characters and shouldn't include any special character!",
-      label: "Username",
-      pattern: "^[A-Za-z0-9]{3,16}$",
-      required: true,
-    },
-    {
-      id: 2,
-      name: "email",
-      type: "email",
-      placeholder: "Email",
-      errorMessage: "It should be a valid email address!",
-      label: "Email",
-      required: true,
-    },
-    {
-      id: 3,
-      name: "mobile",
-      type: "telephone",
-      placeholder: "Mobile Number",
-      errorMessage: "Mobile Number should be 10 Numbers",
-      pattern: "^[0-9]{10}$",
-      label: "Mobile Number",
-      required: true,
-    },
-    {
-      id: 4,
-      name: "password",
-      type: "password",
-      placeholder: "Password",
-      errorMessage:
-        "Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character!",
-      label: "Password",
-      pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
-      required: true,
-    },
-    {
-      id: 5,
-      name: "confirmPassword",
-      type: "password",
-      placeholder: "Confirm Password",
-      errorMessage: "Passwords don't match!",
-      label: "Confirm Password",
-      pattern: values.password,
-      required: true,
-    },
-  ];
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch({
-      type: "REGISTER",
-      payload: {
-        id: new Date().getTime(),
-        values,
-      },
-      
-    });
-    navigate("/login");
+  const [focused, setFocused] = useState(false);
+  const handleFocus = (e) => {
+    setFocused(true);
   };
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
-  const onChange = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
+  const handleSubmit = async (e) => {
+    debugger;
+    e.preventDefault();
+    try {
+      const user = await createUserWithEmailAndPassword(auth, email, password);
+      console.log(user);
+      navigate("/login");
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   return (
     <Container className="app">
       <BannerImg src={registerbanner} alt="" />
-      <Form onSubmit={handleSubmit}>
-        <RegiName>REGISTER</RegiName>
-        {inputs.map((input) => (
-          <Register
-            key={input.id}
-            {...input}
-            value={values[input.name]}
-            onChange={onChange}
+      <Form onSubmit={handleSubmit} className="formInput">
+        
+          <input
+            className="inputtt"
+            name="username"
+            type="text"
+            placeholder="Username"
+            pattern={"^[A-Za-z0-9]{3,16}$"}
+            required
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            onBlur={handleFocus}
+            onFocus={() => username === "username" && setFocused(true)}
+            focused={focused.toString()}
           />
-        ))}
+          <Span>
+            Username should be 3-16 characters and shouldn't include any special
+            character!
+          </Span>
+          <input
+            className="inputtt"
+            name="email"
+            type="email"
+            placeholder="Email Address"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            onBlur={handleFocus}
+            onFocus={() => email === "email" && setFocused(true)}
+            focused={focused.toString()}
+          />
+          <Span>It should be a valid email address!</Span>
+          <input
+            className="inputtt"
+            name="mobile"
+            type="telephone"
+            placeholder="Mobile Number"
+            pattern={"^[0-9]{10}$"}
+            required
+            value={mobile}
+            onChange={(e) => setMobile(e.target.value)}
+            onBlur={handleFocus}
+            onFocus={() => mobile === "mobile" && setFocused(true)}
+            focused={focused.toString()}
+          />
+          <Span>Mobile Number should be 10 Numbers</Span>
+          <input
+            className="inputtt"
+            name="password"
+            type="password"
+            placeholder="Password"
+            pattern={`^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`}
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            onBlur={handleFocus}
+            onFocus={() => password === "password" && setFocused(true)}
+            focused={focused.toString()}
+          />
+          <Span>
+            Password should be 8-20 characters and include at least 1 letter, 1
+            number and 1 special character!
+          </Span>
+          <input
+            className="inputtt"
+            name="confirmPassword"
+            type="password"
+            placeholder="Confirm Password"
+            required
+            value={confirmPassword}
+            pattern={password}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            onBlur={handleFocus}
+            onFocus={() =>
+              confirmPassword === "confirmPassword" && setFocused(true)
+            }
+            focused={focused.toString()}
+          />
+          <Span>Passwords don't match!</Span>
+        
         <SubmitButton>Submit</SubmitButton>
       </Form>
     </Container>

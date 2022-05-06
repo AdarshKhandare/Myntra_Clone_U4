@@ -7,7 +7,6 @@ import {
 import thunk from "redux-thunk";
 import { reducer } from "./RegisterLogin/reducer";
 
-
 const composeEnhancers =
   typeof window === "object" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({

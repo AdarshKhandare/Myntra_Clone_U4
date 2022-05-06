@@ -1,12 +1,12 @@
-// import { LOGIN, REGISTER } from "./actiontypes";
+import { LOGIN, REGISTER } from "./actiontypes";
 
 
-// export const register = () => ({
-//   type: REGISTER,
-// });
+export const register = () => ({
+  type: REGISTER,
+});
 
-// export const login = (payload) => ({
-//   type: LOGIN,
-//   payload
-// });
+export const login = (payload) => ({
+  type: LOGIN,
+  payload
+});
 

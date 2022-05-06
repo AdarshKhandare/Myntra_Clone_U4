@@ -1,5 +1,4 @@
-import { LOGIN, LOGIN_FAIL, REGISTER } from "./actiontypes";
-
+import { LOGIN_FAIL, LOGIN_SUCCESS, REGISTER } from "./actiontypes";
 
 const initState = {
   users: [],
@@ -13,15 +12,16 @@ const reducer = (state = initState, { type, payload }) => {
         ...state,
         users: [...state.users, payload],
       };
-    case LOGIN:
+    case "LOGIN_SUCCESS":
       return {
-        ...state,
+        state,
         users: payload,
+        registerUser: true,
       };
-      case LOGIN_FAIL:
-        return {
-          state
-        }
+    case "LOGIN_FAIL":
+      return {
+        state,
+      };
     default:
       return state;
   }
