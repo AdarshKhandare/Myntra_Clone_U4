@@ -1,27 +1,17 @@
-// create store here
 import {
   applyMiddleware,
   legacy_createStore as createStore,
   compose,
+  combineReducers,
 } from "redux";
+import logger from "redux-logger";
 import thunk from "redux-thunk";
 import { reducer } from "./RegisterLogin/reducer";
+import { bagReducer } from "../Redux/Cart/reducer";
 
-const composeEnhancers =
-  typeof window === "object" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
-        // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
-      })
-    : compose;
+const rootreducer = combineReducers({
+  bag: bagReducer,
+});
 
-const enhancer = composeEnhancers(
-  applyMiddleware(thunk)
-  // other store enhancers if any
-);
 
-export const store = createStore(reducer, enhancer);
-
-// do not remove this code, its for testing purpose
-if (window.Cypress) {
-  window.store = store;
-}
+export const store = createStore(rootreducer, compose(applyMiddleware(thunk)));

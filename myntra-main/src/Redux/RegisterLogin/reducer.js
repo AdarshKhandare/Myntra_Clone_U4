@@ -12,16 +12,7 @@ const reducer = (state = initState, { type, payload }) => {
         ...state,
         users: [...state.users, payload],
       };
-    case "LOGIN_SUCCESS":
-      return {
-        state,
-        users: payload,
-        registerUser: true,
-      };
-    case "LOGIN_FAIL":
-      return {
-        state,
-      };
+
     default:
       return state;
   }

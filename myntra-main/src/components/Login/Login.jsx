@@ -4,7 +4,7 @@ import { ToastContainer } from "react-toastify";
 import {toast}  from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import registerbanner from "../../Images/registerbanner.webp";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   BannerImg,
   Containerr,
@@ -68,7 +68,10 @@ const Login = () => {
         <SubmitButton>Submit</SubmitButton>
       </Form>
       <ToastContainer />
-      <ToastContainer />
+      <p>
+        New Here please
+        <Link to="/register">Register</Link>
+      </p>
     </Containerr>
   );
 };

@@ -11,6 +11,9 @@ input{
     border-radius: 5px;
     border: 1px solid gray;
 }
+p{
+    margin-bottom: 50px;
+}
 
 
 label{

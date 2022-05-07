@@ -19,12 +19,14 @@ export const CartLeft = styled.div`
   gap: 20px;
 `;
 export const AddressDiv = styled.div`
-  padding: 4px 16px;
+  padding: 8px 16px;
+  height:80px;
   border-radius: 4px;
   border: 1px solid #eaeaec;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
   cursor: pointer;
   margin-left: 30%;
 `;
@@ -80,6 +82,16 @@ export const LogoTruck = styled.img`
 `;
 export const NoConvi = styled.p``;
 
+export const CartItemsScroll = styled.div`
+  height: 300px;
+  width: 100%;
+  overflow: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
 export const CartItemDiv = styled.div`
   margin-left: 30%;
   border-radius: 4px;
@@ -87,6 +99,7 @@ export const CartItemDiv = styled.div`
   border: 1px solid #eaeaec;
   display: flex;
   font-size: 14px;
+  margin-bottom: 20px;
 `;
 export const Imagediv = styled.div`
   flex: 1;
@@ -120,28 +133,11 @@ export const Filtercontainer = styled.div`
   width: 50%;
   margin: 10px 0px;
 `;
-export const Filter = styled.div`
+export const SizeDiv = styled.div`
   display: flex;
   align-items: center;
+  text-align: center;
   background-color: whitesmoke;
-  cursor: pointer;
-`;
-
-export const FilterTitle = styled.span`
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
-`;
-
-export const FilterSize = styled.select`
-  border: none;
-  font-size: 14px;
-  background-color: whitesmoke;
-  cursor: pointer;
-`;
-
-export const FilterSizeOption = styled.option`
-  cursor: pointer;
 `;
 
 export const PriceDis = styled.div`
@@ -157,10 +153,16 @@ export const Oprice = styled.p`
 export const PercentOff = styled.p`
   color: #ff3f6c;
 `;
-
+export const FilterPM = styled.div`
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background-color: whitesmoke;
+`;
 export const RemoveButtonDiv = styled.div`
   flex: 1;
   text-align: right;
+  margin-right:-60px;
 `;
 export const RButton = styled.button`
   background-color: #fff;
