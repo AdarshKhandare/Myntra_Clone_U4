@@ -4,11 +4,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import {
-  AddressCheckoutAdd,
-  DotsCheckoutAdd,
-  FormRightDiv,
-} from "../Address/Address.element";
+
 import CartFoot from "../Cart/CartFoot";
 import {
   BagCheckout,
@@ -23,6 +19,10 @@ import {
   SecureN,
 } from "../Cart/CartNav.element";
 import {
+  AddressCheckoutAdd,
+  AllPriceDiv,
+  AvailableofferDiv,
+  AvaOffer,
   CardCD,
   CardCDdiv,
   CardName,
@@ -31,12 +31,25 @@ import {
   ChooseMode,
   Cod,
   Container,
+  CoupDis,
+  CoupDisDiv,
+  CoupDisrs,
+  CoviFee,
+  CoviFeediv,
+  CoviFeeKM,
+  CoviFeers,
   Cvv,
+  Dmrp,
+  DmrpDiv,
+  Dmrprs,
+  DotsCheckoutAdd,
   DotsCheckoutP,
   Emi,
   Emidiv,
   Expiry,
   ExpiryCvv,
+  FirstOffer,
+  FormRightDiv,
   FullpayemntPage,
   Giftleft,
   GiftRight,
@@ -50,6 +63,15 @@ import {
   PaymentMethods,
   PaymentMethodsInput,
   PayNowButton,
+  PriceDetailsT,
+  Tmrp,
+  TmrpDiv,
+  Tmrprs,
+  TopLA,
+  TotalAmount,
+  TotalAmountdiv,
+  TotalAmountrs,
+  TotalPriceDiv,
   Upi,
   Upidiv,
   UpiIcon,
@@ -58,33 +80,6 @@ import {
 } from "./Payment.element";
 import myntraLogo from "../../Images/myntraLogo.png";
 import secure from "../../Images/secure.png";
-import {
-  AllPriceDiv,
-  CoupDis,
-  CoupDisDiv,
-  CoupDisrs,
-  CoviFee,
-  CoviFeediv,
-  CoviFeeKM,
-  CoviFeers,
-  Dmrp,
-  DmrpDiv,
-  Dmrprs,
-  PriceDetailsT,
-  Tmrp,
-  TmrpDiv,
-  Tmrprs,
-  TotalAmount,
-  TotalAmountdiv,
-  TotalAmountrs,
-  TotalPriceDiv,
-} from "../Cart/CartRight.element";
-import {
-  AvailableofferDiv,
-  AvaOffer,
-  FirstOffer,
-  TopLA,
-} from "../Cart/Cart.element";
 import {
   AccountBalanceOutlined,
   AccountBalanceWalletOutlined,
@@ -96,34 +91,33 @@ import {
   QrCodeScanner,
 } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
-
-
+import { useSelector } from "react-redux";
 
 const Payment = () => {
-
   const navigate = useNavigate();
-    const [creditCardNum, setCreditCardNum] = useState("#### #### #### ####");
-    const [cardHolder, setCardHolder] = useState("Your Full Name");
-    const [expireMonthYear, setExpireMonthYear] = useState("MM/YY");
-    const [cvv, setCvv] = useState("CVV");
-      const handleNum = (e) => {
-        setCreditCardNum(e.target.rawValue);
-      };
-       const handleCardHolder = (e) => {
-         setCardHolder(e.target.value);
-       };
+  const [creditCardNum, setCreditCardNum] = useState("#### #### #### ####");
+  const [cardHolder, setCardHolder] = useState("Your Full Name");
+  const [expireMonthYear, setExpireMonthYear] = useState("MM/YY");
+  const [cvv, setCvv] = useState("CVV");
 
-       const handleCvv = (e) => {
-         setCvv(e.target.value);
-       };
+  const handleSubmit = (e) => {
+    console.log("Hello");
+    navigate("/orderconfirm");
+  };
+  const bagData = useSelector((state) => state.bag.bagData);
 
-       const handleExpMonthYear = (e) => {
-         setExpireMonthYear(e.target.value);
-       };
-       const handleSubmit = (e) => {
-         console.log("Hello")
-         navigate("/orderconfirm");
-       }
+  let totalAmount = 0;
+  bagData?.map(
+    (e) =>
+      (totalAmount += Math.floor(
+        Number(e.off_price) * ((100 - Number(e.discount)) / 100)
+      ))
+  );
+
+  let totalMRP = 0;
+  bagData?.map((e) => (totalMRP += Math.floor(Number(e.off_price))));
+
+  let totalDiscount = totalMRP - totalAmount;
   return (
     <Container>
       <NavContainer>
@@ -159,7 +153,7 @@ const Payment = () => {
                   <ExpandMoreIcon
                     sx={{
                       color: "#ff3f6c",
-                      marginLeft: "-530px",
+                      marginLeft: "-495px",
                       fontSize: "12px",
                     }}
                   />
@@ -208,7 +202,7 @@ const Payment = () => {
           <PayemntMain>
             <PaymentMethods>
               <CashOnDel>
-                <CurrencyRupeeOutlined sx={{ width: "25px", height: "25px" }} />
+                <CurrencyRupeeOutlined sx={{ width: "25px", height: "25px" ,}} />
                 <Cod>Cash On Delivery</Cod>
               </CashOnDel>
               <CardCDdiv>
@@ -218,9 +212,7 @@ const Payment = () => {
                 <CardCD>Credit/Debit Card</CardCD>
               </CardCDdiv>
               <Upidiv>
-                <QrCodeScanner
-                  sx={{ width: "25px", height: "25px" }}
-                />
+                <QrCodeScanner sx={{ width: "25px", height: "25px" }} />
                 <Upi>GooglePay/PhonePay/Upi</Upi>
               </Upidiv>
               <Walletdiv>
@@ -240,27 +232,40 @@ const Payment = () => {
                 <Emi>EMI/Pay Later</Emi>
               </Emidiv>
             </PaymentMethods>
-            <PaymentMethodsInput>
+            <PaymentMethodsInput onSubmit={handleSubmit}>
               <ChooseMode>CREDIT/DEBIT CARD</ChooseMode>
               <CardNumber
                 placeholder="Card Number"
-                onChange={handleNum}
+                onChange={(e) => e.target.value}
+                pattern={"^[0-9]{12}$"}
+                maxlength="4"
                 required
               />
               <CardName
                 placeholder="Name On card"
-                onChange={handleCardHolder}
+                onChange={(e) => e.target.value}
+                pattern={"^[A-Za-z]{5,16}$"}
                 required
               />
               <ExpiryCvv>
                 <Expiry
+                  type="month/year"
                   placeholder="Valid Thru (MM/YY)"
-                  onChange={handleExpMonthYear}
+                  onChange={(e) => e.target.value}
+                  pattern={"^[0-9]{4}$"}
+                  maxlength={4}
                   required
                 />
-                <Cvv placeholder="CVV" onChange={handleCvv} required />
+                <Cvv
+                  type="number"
+                  placeholder="CVV"
+                  onChange={(e) => e.target.value}
+                  pattern={"^[0-9]{03}$"}
+                  maxlength={3}
+                  required
+                />
               </ExpiryCvv>
-              <PayNowButton onClick={handleSubmit}>PAY NOW</PayNowButton>
+              <PayNowButton type="submit" />
             </PaymentMethodsInput>
           </PayemntMain>
           <HaveGift>
@@ -277,11 +282,11 @@ const Payment = () => {
             <PriceDetailsT>PRICE DETAILS (1 items)</PriceDetailsT>
             <TmrpDiv>
               <Tmrp>TOTAL MRP</Tmrp>
-              <Tmrprs>₹1,200</Tmrprs>
+              <Tmrprs>₹{totalMRP}</Tmrprs>
             </TmrpDiv>
             <DmrpDiv>
               <Dmrp>Discount on MRP</Dmrp>
-              <Dmrprs>-₹1,600</Dmrprs>
+              <Dmrprs>-₹{totalDiscount}</Dmrprs>
             </DmrpDiv>
             <CoupDisDiv>
               <CoupDis>Coupon Discount</CoupDis>
@@ -296,7 +301,7 @@ const Payment = () => {
           <TotalPriceDiv>
             <TotalAmountdiv>
               <TotalAmount>Total Amount</TotalAmount>
-              <TotalAmountrs>₹1,200</TotalAmountrs>
+              <TotalAmountrs>₹{totalAmount}</TotalAmountrs>
             </TotalAmountdiv>
           </TotalPriceDiv>
         </FormRightDiv>

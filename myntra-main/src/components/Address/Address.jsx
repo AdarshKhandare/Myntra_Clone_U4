@@ -63,13 +63,26 @@ import {
   TotalPriceDiv,
 } from "../Cart/CartRight.element";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 const Address = () => {
-
   const navigate = useNavigate();
-  const goToPayment = ()=>{
+  const bagData = useSelector((state) => state.bag.bagData);
 
+  let totalAmount = 0;
+  bagData?.map(
+    (e) =>
+      (totalAmount += Math.floor(
+        Number(e.off_price) * ((100 - Number(e.discount)) / 100)
+      ))
+  );
+
+  let totalMRP = 0;
+  bagData?.map((e) => (totalMRP += Math.floor(Number(e.off_price))));
+
+  let totalDiscount = totalMRP - totalAmount;
+  const goToPayment = () => {
     navigate("/payment");
-  }
+  };
   return (
     <Container>
       <NavContainer>
@@ -120,11 +133,11 @@ const Address = () => {
             <PriceDetailsT>PRICE DETAILS (1 items)</PriceDetailsT>
             <TmrpDiv>
               <Tmrp>TOTAL MRP</Tmrp>
-              <Tmrprs>₹1,200</Tmrprs>
+              <Tmrprs>₹{totalMRP}</Tmrprs>
             </TmrpDiv>
             <DmrpDiv>
               <Dmrp>Discount on MRP</Dmrp>
-              <Dmrprs>-₹1,600</Dmrprs>
+              <Dmrprs>-₹{totalDiscount}</Dmrprs>
             </DmrpDiv>
             <CoupDisDiv>
               <CoupDis>Coupon Discount</CoupDis>
@@ -139,10 +152,12 @@ const Address = () => {
           <TotalPriceDiv>
             <TotalAmountdiv>
               <TotalAmount>Total Amount</TotalAmount>
-              <TotalAmountrs>₹1,200</TotalAmountrs>
+              <TotalAmountrs>₹{totalAmount}</TotalAmountrs>
             </TotalAmountdiv>
             <PlaceorderDiv>
-              <PlaceorderButton onClick={goToPayment}>PLACE ORDER</PlaceorderButton>
+              <PlaceorderButton onClick={goToPayment}>
+                PLACE ORDER
+              </PlaceorderButton>
             </PlaceorderDiv>
           </TotalPriceDiv>
         </FormRightDiv>

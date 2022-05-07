@@ -47,11 +47,13 @@ export const NavSecure = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 12px;
-  gap: 5px;
+  gap: 10px;
   margin-left: 20px;
 `;
 export const SecureLogo = styled.img`
   width: 30px;
   height: 30px;
 `;
-export const SecureN = styled.p``;
+export const SecureN = styled.p`
+  margin-bottom: 20px;
+`;
