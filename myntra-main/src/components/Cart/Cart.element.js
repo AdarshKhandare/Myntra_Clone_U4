@@ -115,6 +115,8 @@ export const Name = styled.p`
 export const Filtercontainer = styled.div`
   display: flex;
   justify-content: space-between;
+  text-align: center;
+  align-items: center;
   width: 50%;
   margin: 10px 0px;
 `;

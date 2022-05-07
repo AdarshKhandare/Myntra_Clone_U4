@@ -5,10 +5,11 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {
+  AddBoxOutlined,
   BookmarkBorderOutlined,
   CloseOutlined,
   DiscountOutlined,
-  LocalOfferOutlined,
+  IndeterminateCheckBoxOutlined,
 } from "@mui/icons-material";
 import truck from "../../Images/truck.webp";
 
@@ -138,27 +139,26 @@ const Cart = () => {
               <Brand>Roadster</Brand>
               <Name>Men Blue Regular Fit Printed Casual Shirt</Name>
               <Filtercontainer>
-                <Filter>
-                  <FilterTitle>Size:</FilterTitle>
-                  <FilterSize>
-                    <FilterSizeOption>S</FilterSizeOption>
-                    <FilterSizeOption>M</FilterSizeOption>
-                    <FilterSizeOption>L</FilterSizeOption>
-                    <FilterSizeOption>XL</FilterSizeOption>
-                  </FilterSize>
-                </Filter>
-                <Filter>
-                  <FilterTitle>Qty:</FilterTitle>
-                  <FilterSize>
-                    <FilterSizeOption>1</FilterSizeOption>
-                    <FilterSizeOption>2</FilterSizeOption>
-                    <FilterSizeOption>3</FilterSizeOption>
-                    <FilterSizeOption>4</FilterSizeOption>
-                    <FilterSizeOption>5</FilterSizeOption>
-                    <FilterSizeOption>6</FilterSizeOption>
-                    <FilterSizeOption>7</FilterSizeOption>
-                  </FilterSize>
-                </Filter>
+                <div>
+                  <h4>Size: L</h4>
+                </div>
+                <div>
+                  <AddBoxOutlined
+                    sx={{
+                      backgroundColor: "#fff",
+                      color: "black",
+                      marginRight: "5px",
+                    }}
+                  />
+                  10
+                  <IndeterminateCheckBoxOutlined
+                    sx={{
+                      color: "black",
+                      backgroundColor: "#fff",
+                      marginLeft: "5px",
+                    }}
+                  />
+                </div>
               </Filtercontainer>
               <PriceDis>
                 <Price>₹1200</Price>
