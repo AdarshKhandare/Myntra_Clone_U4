@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../Register/register.css";
+import "../Register/register.module.css";
 import { ToastContainer } from "react-toastify";
 import {toast}  from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
@@ -7,8 +7,11 @@ import registerbanner from "../../Images/registerbanner.webp";
 import { Link, useNavigate } from "react-router-dom";
 import {
   BannerImg,
+  Container,
   Containerr,
   Form,
+  FormInput,
+  FormInputDiv,
   RegiName,
   SubmitButton,
 } from "./Login.element";
@@ -43,28 +46,30 @@ const Login = () => {
   };
 
   return (
-    <Containerr className="app">
+    <Container>
       <BannerImg src={registerbanner} alt="" />
       <Form onSubmit={handleSubmit} className="formInput">
         <RegiName>LOGIN</RegiName>
-        <input
-          className="inputtt"
-          name="email"
-          type="email"
-          placeholder="Email"
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          className="inputtt"
-          name="password"
-          type="password"
-          placeholder="Password"
-          required
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <FormInputDiv>
+          <FormInput
+            className="inputtt"
+            name="email"
+            type="email"
+            placeholder="Email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <FormInput
+            className="inputtt"
+            name="password"
+            type="password"
+            placeholder="Password"
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </FormInputDiv>
         <SubmitButton>Submit</SubmitButton>
       </Form>
       <ToastContainer />
@@ -72,7 +77,7 @@ const Login = () => {
         New Here please
         <Link to="/register">Register</Link>
       </p>
-    </Containerr>
+    </Container>
   );
 };
 

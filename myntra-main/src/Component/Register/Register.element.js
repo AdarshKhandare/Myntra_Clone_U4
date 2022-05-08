@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -39,14 +38,27 @@ export const SubmitButton = styled.button`
 `;
 
 export const FormInputDiv = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-
+  display: flex;
+  flex-direction: column;
+  width: 300px;
 `;
+
 export const Span = styled.span`
   font-size: 12px;
   padding: 3px;
   color: red;
   display: none;
 `;
+export const FormInput = styled.input`
+  padding: 15px;
+  margin: 10px 0px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  
+  &:invalid[focused=${true}] {
+    border: 1px solid red;
+  }
+  &:invalid[focused=${true}] && ${Span} {
+    display: block;
+  }
+  `;

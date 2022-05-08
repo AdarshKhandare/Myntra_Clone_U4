@@ -11,8 +11,9 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import RegisterInput from "./RegisterInput";
 import registerbanner from "../../Images/registerbanner.webp";
-import "./register.css";
+import "./register.module.css";
 import { useDispatch } from "react-redux";
+import { BannerImg, Container, Form, RegiName, SubmitButton } from "./Register.element";
 const RegisterForm = () => {
   
   const [values, setValues] = useState({
@@ -111,10 +112,10 @@ const RegisterForm = () => {
   }
 
   return (
-    <div className="app">
-      <img src={registerbanner} alt="" />
-      <form onSubmit={handleSubmit}>
-        <h3>Register</h3>
+    <Container>
+      <BannerImg src={registerbanner} alt="" />
+      <Form onSubmit={handleSubmit}>
+        <RegiName>Register</RegiName>
         {inputs.map((input) => (
           <RegisterInput
             key={input.id}
@@ -123,14 +124,14 @@ const RegisterForm = () => {
             onChange={onChange}
           />
         ))}
-        <button onClick={handleRegisterdata}>Submit</button>
-      </form>
+        <SubmitButton onClick={handleRegisterdata}>Submit</SubmitButton>
+      </Form>
       <ToastContainer />
       <p>
         Already having Account please
         <Link to="/login">Login</Link>
       </p>
-    </div>
+    </Container>
   );
 };
 

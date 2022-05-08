@@ -1,5 +1,6 @@
 import { useState } from "react";
-import "./register.css";
+import { FormInput, FormInputDiv, Span } from "./Register.element";
+import "./register.module.css";
 
 const RegisterInput = (props) => {
   const [focused, setFocused] = useState(false);
@@ -10,9 +11,8 @@ const RegisterInput = (props) => {
   };
 
   return (
-    <div className="formInput">
-        
-      <input
+    <FormInputDiv>
+      <FormInput
         {...inputProps}
         onChange={onChange}
         onBlur={handleFocus}
@@ -21,8 +21,8 @@ const RegisterInput = (props) => {
         }
         focused={focused.toString()}
       />
-      <span>{errorMessage}</span>
-    </div>
+      <Span>{errorMessage}</Span>
+    </FormInputDiv>
   );
 };
 
