@@ -28,6 +28,7 @@ import {
   decrease,
   decreaseQty,
   deleteBagData,
+  getBagData,
   increase,
   increaseQty,
 } from "../../redux/Cart/action";
@@ -42,20 +43,25 @@ const CartItemsDiv = ({
   discount,
   brand,
 }) => {
+  const [count , setCount] = useState(0)
   const bagData = useSelector((state) => state.bag.bagData);
-  const [count, setCount] = useState(0);
   const dispatch = useDispatch();
   const handleModelBagClose = (id) => {
     dispatch(deleteBagData(id));
   };
 
-  const increaseQ = (id) => {
-    dispatch(increase(id));
-  };
-  // const increaseQ = () => {
-  //   setCount(count + 1);
+  // const increaseQ = (id, quantity) => {
+  //   const newQty = quantity + 1;
+  //   if (1 >= quantity) {
+  //     return;
+  //   }
+  //   dispatch(increase(id, newQty));
   // };
+  const increaseQ = () => {
+    setCount(count + 1);
+  };
   const decreaseQ = () => {
+
     setCount(count - 1);
   };
 
@@ -73,7 +79,7 @@ const CartItemsDiv = ({
           </SizeDiv>
           <FilterPM>
             <AddBoxOutlined
-              onClick={increaseQ}
+              onClick={() => increaseQ(id, 0)}
               sx={{
                 backgroundColor: "#fff",
                 color: "black",
@@ -82,7 +88,7 @@ const CartItemsDiv = ({
             />
             <p>{count}</p>
             <IndeterminateCheckBoxOutlined
-              onClick={decreaseQ}
+              onClick={() => decreaseQ(id, count)}
               sx={{
                 color: "black",
                 backgroundColor: "#fff",

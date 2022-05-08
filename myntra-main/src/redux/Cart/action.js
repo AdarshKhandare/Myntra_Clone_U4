@@ -162,14 +162,13 @@ export const getBagData = (payload) => async(dispatch) => {
     });
 };
 
-export const increase = (idx) => async (dispatch) => {
+export const increase = (idx,payload) => async (dispatch) => {
   // dispatch( getBagRequest() )
 
   return axios
     .delete(`http://localhost:5000/cart/${idx}`)
     .then((res) => {
-      dispatch(increaseQty(res.data));
-      dispatch(getBagData());
+      dispatch(getBagSuccess(res.data));
     })
     .catch((err) => {
       dispatch(deleteBagFailure());
