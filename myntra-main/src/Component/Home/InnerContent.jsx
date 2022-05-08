@@ -32,7 +32,9 @@ function InnerContent() {
   const topPicks = useSelector((state) => state.home.topPicks);
   const categoriesToBag = useSelector((state) => state.home.gategoriesToBag);
   const giftingCards = useSelector((state) => state.home.giftingCards);
-  const dealsoflatestarival = useSelector((state) => state.home.dealsoflatestarival);
+  const dealsoflatestarival = useSelector(
+    (state) => state.home.dealsoflatestarival
+  );
   const newintopbrands = useSelector((state) => state.home.newintopbrands);
   const topinfluncerseclusive = useSelector(
     (state) => state.home.topinfluncerseclusive
@@ -41,39 +43,39 @@ function InnerContent() {
   console.log("data", dealsOftheDay);
   const dispatch = useDispatch();
   useEffect(() => {
-    fetch(`http://localhost:5050/dealsofthday`)
+    fetch(`http://localhost:5000/dealsofthday`)
       .then((res) => res.json())
       .then((res) => dispatch(getDealsOftheData(res)))
       .catch((e) => console.log(e));
-    fetch(`http://localhost:5050/bestOfMyntra`)
+    fetch(`http://localhost:5000/bestOfMyntra`)
       .then((res) => res.json())
       .then((res) => dispatch(getBestOfMyntra(res)))
       .catch((e) => console.log(e));
-    fetch(`http://localhost:5050/topPicks`)
+    fetch(`http://localhost:5000/topPicks`)
       .then((res) => res.json())
       .then((res) => dispatch(getTopPicksData(res)))
       .catch((e) => console.log(e));
-    fetch(`http://localhost:5050/categoriesToBag`)
+    fetch(`http://localhost:5000/categoriesToBag`)
       .then((res) => res.json())
       .then((res) => dispatch(getCategoriesData(res)))
       .catch((e) => console.log(e));
-    fetch(`http://localhost:5050/categoriesToBag`)
+    fetch(`http://localhost:5000/categoriesToBag`)
       .then((res) => res.json())
       .then((res) => dispatch(getCategoriesData(res)))
       .catch((e) => console.log(e));
-    fetch(`http://localhost:5050/GiftingCards`)
+    fetch(`http://localhost:5000/GiftingCards`)
       .then((res) => res.json())
       .then((res) => dispatch(getGiftingCards(res)))
       .catch((e) => console.log(e));
-    fetch(`http://localhost:5050/dealsoOnLatestArival`)
+    fetch(`http://localhost:5000/dealsoOnLatestArival`)
       .then((res) => res.json())
       .then((res) => dispatch(getdealsOflaatestArival(res)))
       .catch((e) => console.log(e));
-    fetch(`http://localhost:5050/newInTopBrands`)
+    fetch(`http://localhost:5000/newInTopBrands`)
       .then((res) => res.json())
       .then((res) => dispatch(getNewTopBrands(res)))
       .catch((e) => console.log(e));
-    fetch(`http://localhost:5050/topInfluencerExclusiveStyles`)
+    fetch(`http://localhost:5000/topInfluencerExclusiveStyles`)
       .then((res) => res.json())
       .then((res) => dispatch(getTopInInfluncerExclusive(res)))
       .catch((e) => console.log(e));

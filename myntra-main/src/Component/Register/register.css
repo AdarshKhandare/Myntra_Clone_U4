@@ -38,8 +38,8 @@ input:invalid[focused="true"] ~ span{
 
 
 /* RegisterForm */
-/* 
-.app {
+
+/* .app {
   display: flex;
   flex-direction: column;
   align-items: center;
