@@ -13,8 +13,8 @@ import { rootShouldForwardProp } from '@mui/material/styles/styled';
 import { getDealsOftheData } from '../../redux/Home/actions';
 import { useSelect } from '@mui/base';
 import DealOftheDayCard from '../Home/DealOftheDayCard';
-import { Badge } from '@mui/material';
-
+import Badge from '@mui/material/Badge';
+import MailIcon from '@mui/icons-material/Mail';
 const MainDiv = styled.div`
 display: grid;
 grid-template-columns: 100px 500px 500px 200px;
@@ -43,10 +43,10 @@ const divStyle = {
 
 }
 const imgStyle = { height: "30px", margin: "20px" }
-const wish = { fontSize: "10px", paddingLeft: "10px" }
+const wish = { fontSize: "10px", paddingLeft: "20px" }
 const wishIcon = { marginTop: "15px" }
-const navStyles = { marginTop: "20px" }
-const searchBar = { display: "flex", marginTop: "20px", paddingLeft: "80px", backgroundColor: "whitesmoke" }
+const navStyles = { marginTop: "8px" , padding:"10px" }
+const searchBar = { display: "flex", marginTop: "25px", paddingLeft: "80px", backgroundColor: "whitesmoke" }
 function Navbar() {
 
 
@@ -845,7 +845,7 @@ function Navbar() {
                   STUDIO
                 </a>
                 <div className={styles.dropdownContent}>
-                  <div style={{ width: "600px" }}>
+                  <div style={{ width: "600px" ,textAlign:"center" }}>
                     <img
                       src="https://constant.myntassets.com/web/assets/img/studio-logo-new.svg"
                       alt=""
@@ -858,7 +858,7 @@ function Navbar() {
                       style={{ width: "600px", marginTop: "10px" }}
                     />
                     <button
-                      style={{ backgroundColor: "lightblue", margin: "10px" }}
+                      style={{ backgroundColor: "lightblue", margin: "10px" , borderRadius:"5%" }}
                     >
                       EXPLORE STUDION >
                     </button>
@@ -893,8 +893,8 @@ function Navbar() {
             </div>
           </div>
           <div style={{ display: "flex", paddingLeft: "20px" }}>
-            <Link to="/register">
-              <div style={{ fontSize: "10px" }}>
+            <Link to="/register" style={{ textDecoration: "none" }}>
+              <div style={{ fontSize: "10px", broder: "none", color: "black" }}>
                 <PermIdentityIcon
                   style={{ marginTop: "15px", padding: "0px" }}
                 />{" "}
@@ -906,13 +906,18 @@ function Navbar() {
               <FavoriteBorderIcon style={wishIcon} /> <br />
               wishlist
             </div>
-            <Link to="/cart">
-              <div style={wish}>
+
+            <div style={{ fontSize: "10px", textDecoration: "none", color: "black" ,marginTop:"17px" , paddingLeft:"10px"}}>
+              <Link to="/cart" style={{ textDecoration: "none" }}>
+      
                 <Badge color="secondary" badgeContent={0} showZero>
-                  <ShoppingBagOutlinedIcon style={wishIcon} />
+                  <ShoppingBagOutlinedIcon  style={{color:"black"}}/>
                 </Badge>
-              </div>
-            </Link>
+                <br />
+                <div style={{ textAlign:"center" , color:"black" }}>cart</div>
+              </Link>
+            </div>
+
           </div>
         </MainDiv>
       </div>
