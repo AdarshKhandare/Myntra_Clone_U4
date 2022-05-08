@@ -5,6 +5,7 @@ import { FilterContext } from "../../context/FilterContext";
 import Sort from "../sort/Sort";
 import { SortContext } from "../../context/Sortcontext";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import {useNavigate} from "react-router-dom"
 function Card() {
   const [flag, setflag] = useState(false);
   const { event } = useContext(FilterContext);
@@ -14,7 +15,8 @@ function Card() {
   const { state1, state2 } = useContext(SortContext)
   const [flagBundle , setFlagBundle] = useState(false);
   const [flagCountry , setFlagCountry] = useState(false)
-  const [flagSize , setFlagSize] = useState(false)
+  const [flagSize, setFlagSize] = useState(false)
+  const navigate= useNavigate()
   var handleEnter = (e) => {
     setflag(true);
     e.mouse = true;
@@ -23,7 +25,10 @@ function Card() {
     setflag(false);
     e.mouse = false;
   };
-
+  const handleMove = (ele) => {
+    navigate(`/singlemen/${ele.id}`)
+    console.log(ele)
+  }
   const handleEnterBundle=()=>{
     setFlagBundle(true)
   }
@@ -123,6 +128,7 @@ function Card() {
                   onMouseLeave={() => {
                     handleLeave(ele);
                   }}
+                  onClick={()=>{handleMove(ele)}}
                 >
                   <CardDiv flag={ele.mouse}>
                     <img
@@ -262,6 +268,7 @@ function Card() {
                   onMouseLeave={() => {
                     handleLeave(ele);
                   }}
+                  onClick={()=>{handleMove(ele)}}
                 >
                   <CardDiv flag={ele.mouse}>
                     <img
@@ -400,6 +407,7 @@ function Card() {
                   onMouseLeave={() => {
                     handleLeave(ele);
                   }}
+                  onClick={()=>{handleMove(ele)}}
                 >
                   <CardDiv flag={ele.mouse}>
                     <img

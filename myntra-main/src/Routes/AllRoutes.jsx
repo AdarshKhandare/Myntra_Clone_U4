@@ -7,16 +7,15 @@ import PaymentPage from "../Pages/PaymentPage";
 import OrderConfirmPage from "../Pages/OrderConfirmPage";
 import LoginPage from "../Pages/LoginPage";
 import RegisterPage from "../Pages/RegisterPage";
-
-
-
+import MensPage from "../Pages/MensPage"
+import Details from "../Component/Details/Details"
 const AllRoutes = () => {
   return (
     <Routes>
       <Route extact path="/" element={<Home />} />
-      <Route extact path="/men" element={<Home />} />
+      <Route extact path="/men" element={<MensPage />} />
       <Route extact path="/women" element={<Home />} />
-      <Route extact path="/singlemen" element={<Home />} />
+      <Route extact path="/singlemen/:id" element={<Details />} />
       <Route extact path="/singlewomen" element={<Home />} />
       <Route extact path="/cart" element={<CartPage />} />
       <Route extact path="/address" element={<AddressPage />} />

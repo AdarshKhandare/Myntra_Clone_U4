@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Images from "./Images";
-import SubDetails from "./SubDetails";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined';
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
@@ -17,8 +15,11 @@ import {
   RatingDiv,
 } from "./detailStyled";
 import StarIcon from "@mui/icons-material/Star";
+import { useParams } from "react-router-dom";
 function Details() {
-  const [dataOne, setDataOne] = useState({});
+  const [data, setData] = useState([]);
+  const id = useParams()
+  console.log(id)
   let arr = [
     {
       id: 109,
@@ -47,22 +48,34 @@ function Details() {
       count: 22,
     },
   ];
+  const getData = async () => {
+    let res = await fetch(`http://localhost:5000/posts/${id.id}`)
+    let datas = await res.json();
+    console.log(datas)
+    setData([datas])
+  }
+  useEffect(() => {
+      getData()  
+  },[])
   console.log(arr);
   return (
     <>
-      <DetailsMainDiv>
+      {
+        data.map((ele) => {
+          return (
+            <DetailsMainDiv>
         <ImageContainer>
           <ImgDiv>
-            <Img src={arr[0].images.image1} />
+            <Img src={ele.images.image1} />
           </ImgDiv>
           <ImgDiv>
-            <Img src={arr[0].images.image2} />
+            <Img src={ele.images.image2} />
           </ImgDiv>
           <ImgDiv>
-            <Img src={arr[0].images.image3} />
+            <Img src={ele.images.image3} />
           </ImgDiv>
           <ImgDiv>
-            <Img src={arr[0].images.image4} />
+            <Img src={ele.images.image4} />
           </ImgDiv>
         </ImageContainer>
         <SubDetailsDiv>
@@ -78,11 +91,11 @@ function Details() {
                       color: "darkslategray",
                     }}
                   >
-                    {arr[0].brand}
+                    {ele.brand}
                   </p>
                 </b>
                 <p style={{ fontSize: "20px", color: "#8b8d97" }}>
-                  {arr[0].title}
+                  {ele.title}
                 </p>
               </div>
               <RatingDiv>
@@ -96,7 +109,7 @@ function Details() {
                 >
                   <b>
                     {" "}
-                    <p>{arr[0].rating} </p>
+                    <p>{ele.rating} </p>
                   </b>
                   <p style={{ color: "#48958f" }}>
                     <StarIcon fontSize="small" />
@@ -110,7 +123,7 @@ function Details() {
                   }}
                 >
                   {" "}
-                  <p> | {arr[0].count} Ratings</p>
+                  <p> | {ele.count} Ratings</p>
                 </div>
               </RatingDiv>
             </div>
@@ -128,7 +141,7 @@ function Details() {
                   {" "}
                   <b
                     style={{ color: "darkslategray" }}
-                  >{`Rs.${arr[0].price}`}</b>
+                  >{`Rs.${ele.price}`}</b>
                 </p>
                 <p
                   style={{
@@ -140,11 +153,11 @@ function Details() {
                   {" "}
                   Rs.
                   <span style={{ textDecoration: "line-through" }}>
-                    {`${arr[0].off_price}`}{" "}
+                    {`${ele.off_price}`}{" "}
                   </span>
                 </p>
                 <p style={{ color: "#ee9d20" }}>
-                  <b> {`(${arr[0].discount}% OFF)`} </b>
+                  <b> {`(${ele.discount}% OFF)`} </b>
                 </p>
               </div>
               <div
@@ -184,7 +197,7 @@ function Details() {
                
               </div>
               <div style={{ display: "flex", gap: "10px" }}>
-                {arr[0].sizes.map((ele) => {
+                {ele.sizes.map((ele) => {
                   return (
                     <SizesDIv>
                       <p>{ele}</p>
@@ -238,7 +251,7 @@ function Details() {
                 <p style={{fontSize:"16px", color:"black"}}><b>BEST OFFERS</b>   </p>
                 <div style={{color:"gray"}}><LocalOfferOutlinedIcon/></div>
             </div>
-              <p style={{fontSize:"16px",marginTop:"-5px", color:"black"}}> <b>Best Price:<span style={{color:"#ee9d20"}}> Rs.{arr[0].price }</span></b></p>
+              <p style={{fontSize:"16px",marginTop:"-5px", color:"black"}}> <b>Best Price:<span style={{color:"#ee9d20"}}> Rs.{ele.price }</span></b></p>
               <ul style={{marginLeft:"-26px"}}>
                 <li>Applicable on: Orders above Rs. 3999 (only on first purchase)</li>
                 <li>Coupon code:<b style={{color:"black"}}> MYNTRA10</b></li>
@@ -254,6 +267,9 @@ function Details() {
           </div>
         </SubDetailsDiv>
       </DetailsMainDiv>
+          )
+        })
+    }
     </>
   );  
 }
