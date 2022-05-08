@@ -12,7 +12,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { rootShouldForwardProp } from '@mui/material/styles/styled';
 import { getDealsOftheData } from '../redux/redux/actions';
 import { useSelect } from '@mui/base';
-import DealOftheDayCard from './DealOftheDayCard';
+import DealOftheDayCard from '../DealOftheDayCard';
 
 const MainDiv = styled.div`
 display: grid;
