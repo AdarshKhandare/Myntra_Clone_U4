@@ -262,14 +262,12 @@ export const TmrpDiv = styled.div`
   justify-content: space-between;
   text-align: center;
   align-items: center;
-  margin-bottom: -40px;
 `;
 export const Tmrp = styled.p``;
 export const Tmrprs = styled.p``;
 export const DmrpDiv = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: -40px;
 `;
 export const Dmrp = styled.p``;
 export const Dmrprs = styled.p`
@@ -280,7 +278,6 @@ export const CoupDisDiv = styled.div`
   justify-content: space-between;
   text-align: center;
   align-items: center;
-  margin-bottom: -40px;
 `;
 export const CoupDis = styled.p``;
 export const CoupDisrs = styled.p`
@@ -291,7 +288,6 @@ export const CoviFeediv = styled.div`
   justify-content: space-between;
   text-align: center;
   align-items: center;
-  margin-bottom: -40px;
 `;
 export const CoviFee = styled.p``;
 export const CoviFeeKM = styled.p`
@@ -312,13 +308,11 @@ export const TotalPriceDiv = styled.div`
   padding: 8px 16px;
   border: 1px solid #eaeaec;
   margin-right: 40%;
-  margin-bottom: -40px;
 `;
 export const TotalAmountdiv = styled.div`
   display: flex;
   justify-content: space-between;
   font-weight: 700;
-  margin-bottom: -40px;
 `;
 export const TotalAmount = styled.p``;
 export const TotalAmountrs = styled.p``;

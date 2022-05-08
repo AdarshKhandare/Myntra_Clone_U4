@@ -43,7 +43,7 @@ export const getBagRequest = () => {
 
 export const getBagSuccess = (payload) => {
   return {
-    type: "GET_BAG_SUCCESS",
+    type: GET_BAG_SUCCESS,
     payload,
   };
 };
@@ -69,14 +69,14 @@ export const deleteBagSuccess = () => {
 
 export const deleteBagFailure = (err) => {
   return {
-    type: "DELETE_BAG_FAILURE",
+    type: DELETE_BAG_FAILURE,
     payload: err,
   };
 };
 
 export const patchBagRequest = () => {
   return {
-    type:  "PATCH_BAG_REQUEST",4524
+    type: PATCH_BAG_REQUEST,
   };
 };
 
@@ -92,16 +92,14 @@ export const patchBagFailure = (err) => {
     payload: err,
   };
 };
-export const increaseQty = (idx) => {
+export const increaseQty = () => {
   return {
     type: INCREASE_BAG_QTY,
-    payload: idx,
   };
 };
-export const decreaseQty = (idx) => {
+export const decreaseQty = () => {
   return {
     type: DECREASE_BAG_QTY,
-    payload: idx,
   };
 };
 
@@ -149,7 +147,7 @@ export const deleteBagData = (idx) => async (dispatch) => {
     });
 };
 
-export const getBagData = (payload) => (dispatch) => {
+export const getBagData = (payload) => async(dispatch) => {
   // dispatch( getBagRequest() )
 
   return axios
@@ -168,7 +166,7 @@ export const increase = (idx) => async (dispatch) => {
   return axios
     .delete(`http://localhost:5000/cart/${idx}`)
     .then((res) => {
-      dispatch(deleteBagSuccess());
+      dispatch(increaseQty());
       dispatch(getBagData());
     })
     .catch((err) => {
@@ -182,7 +180,7 @@ export const decrease = (idx) => async (dispatch) => {
   return axios
     .delete(`http://localhost:5000/cart/${idx}`)
     .then((res) => {
-      dispatch(deleteBagSuccess());
+      dispatch(decreaseQty());
       dispatch(getBagData());
     })
     .catch((err) => {

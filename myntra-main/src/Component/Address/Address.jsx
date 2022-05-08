@@ -1,6 +1,8 @@
 import React from "react";
 import CartFoot from "../Cart/CartFoot";
 import CartRight from "../Cart/CartRight";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   AddAddressButton,
   AddressCheckoutAdd,
@@ -83,6 +85,10 @@ const Address = () => {
   const goToPayment = () => {
     navigate("/payment");
   };
+  const addAddress = (e) => {
+    e.preventDefault()
+toast.success("Address Added SuccessFully")
+  }
   return (
     <Container>
       <NavContainer>
@@ -124,13 +130,17 @@ const Address = () => {
               <SaveWork>Work</SaveWork>
             </SaveAddressdiv>
             <ButtonDiv>
-              <AddAddressButton>ADD ADDRESS</AddAddressButton>
+              <AddAddressButton onClick={addAddress}>
+                ADD ADDRESS
+              </AddAddressButton>
             </ButtonDiv>
           </FormDiv>
         </FormLeftdiv>
         <FormRightDiv>
           <AllPriceDiv>
-            <PriceDetailsT>PRICE DETAILS (1 items)</PriceDetailsT>
+            <PriceDetailsT>
+              PRICE DETAILS ({bagData.length} Items)
+            </PriceDetailsT>
             <TmrpDiv>
               <Tmrp>TOTAL MRP</Tmrp>
               <Tmrprs>₹{totalMRP}</Tmrprs>
@@ -163,6 +173,7 @@ const Address = () => {
         </FormRightDiv>
       </AddressFormDiv>
       <CartFoot />
+      <ToastContainer />
     </Container>
   );
 };

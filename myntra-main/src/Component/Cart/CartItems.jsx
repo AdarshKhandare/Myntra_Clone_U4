@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   AddBoxOutlined,
   Clear,
@@ -24,7 +24,13 @@ import {
   RemoveButtonDiv,
   SizeDiv,
 } from "./Cart.element";
-import { deleteBagData } from "../../redux/Cart/action";
+import {
+  decrease,
+  decreaseQty,
+  deleteBagData,
+  increase,
+  increaseQty,
+} from "../../redux/Cart/action";
 import { useDispatch, useSelector } from "react-redux";
 const CartItemsDiv = ({
   images,
@@ -36,10 +42,18 @@ const CartItemsDiv = ({
   discount,
   brand,
 }) => {
-    const dispatch = useDispatch();
-      const handleModelBagClose = (id) => {
-        dispatch(deleteBagData(id));
-      };
+ const [count,setCount] = useState(0)
+  const dispatch = useDispatch();
+  const handleModelBagClose = (id) => {
+    dispatch(deleteBagData(id));
+  };
+  const increaseQ = () => {
+    setCount(count+1)
+  };
+  const decreaseQ = () => {
+    setCount(count - 1);
+  };
+
   return (
     <CartItemDiv>
       <Imagediv>
@@ -54,14 +68,16 @@ const CartItemsDiv = ({
           </SizeDiv>
           <FilterPM>
             <AddBoxOutlined
+              onClick={increaseQ}
               sx={{
                 backgroundColor: "#fff",
                 color: "black",
                 marginRight: "5px",
               }}
             />
-            <p>0</p>
+            <p>{count}</p>
             <IndeterminateCheckBoxOutlined
+              onClick={decreaseQ}
               sx={{
                 color: "black",
                 backgroundColor: "#fff",

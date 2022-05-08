@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ToastContainer } from "react-toastify";
-import {toast}  from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import registerbanner from "../../Images/registerbanner.webp";
 import { Link, useNavigate } from "react-router-dom";
@@ -13,9 +13,7 @@ import {
   RegiName,
   SubmitButton,
 } from "./Login.element";
-import {
-  signInWithEmailAndPassword,
-} from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebse/firebase-config";
 
 const Login = () => {
@@ -27,10 +25,21 @@ const Login = () => {
     e.preventDefault();
     try {
       const user = await signInWithEmailAndPassword(auth, email, password);
-      toast.dark("LOGIN SUCCESSFULL (enjoy)", {
-        theme: "colored",
+      toast.success("🦄 Wow so easy!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
       });
+      setInterval(function () {
+        navigate("/cart");
+      }, 5000);
+
       navigate("/cart");
+
       console.log(user);
     } catch (error) {
       console.log(error.message);
@@ -66,8 +75,19 @@ const Login = () => {
           />
         </FormInputDiv>
         <SubmitButton>Submit</SubmitButton>
+        <ToastContainer
+          position="top-right"
+          autoClose={5500}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </Form>
-      <ToastContainer />
+
       <p>
         New Here please
         <Link to="/register">Register</Link>

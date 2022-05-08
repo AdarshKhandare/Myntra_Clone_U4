@@ -29,6 +29,7 @@ export const AppCou = styled.p`
 `;
 export const ApplyButton = styled.button`
   width: 30%;
+  padding: 10px;
   border: 1px solid #ff3f6c;
   border-radius: 4px;
   margin-right: 0px;
@@ -120,6 +121,7 @@ export const PlaceorderDiv = styled.div`
 export const PlaceorderButton = styled.button`
   cursor: pointer;
   background-color: #ff3f6c;
+  border-radius: 4px;
   color: #fff;
   width: 100%;
   border: none;

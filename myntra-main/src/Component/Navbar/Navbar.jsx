@@ -1,57 +1,56 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 import styles from "../style/Navbar.module.css";
 // import styles from './Todo.module.css'
-import styled from "styled-components"
+import styled from "styled-components";
 
 import { BrowserRouter, Route, Link, NavLink } from "react-router-dom";
-import SearchIcon from '@mui/icons-material/Search';
-import PermIdentityIcon from '@mui/icons-material/PermIdentity';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
-import { useDispatch, useSelector } from 'react-redux';
-import { rootShouldForwardProp } from '@mui/material/styles/styled';
-import { getDealsOftheData } from '../../redux/Home/actions';
-import { useSelect } from '@mui/base';
-import DealOftheDayCard from '../Home/DealOftheDayCard';
-import Badge from '@mui/material/Badge';
-import MailIcon from '@mui/icons-material/Mail';
+import SearchIcon from "@mui/icons-material/Search";
+import PermIdentityIcon from "@mui/icons-material/PermIdentity";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
+import { useDispatch, useSelector } from "react-redux";
+import { rootShouldForwardProp } from "@mui/material/styles/styled";
+import { getDealsOftheData } from "../../redux/Home/actions";
+import { useSelect } from "@mui/base";
+import DealOftheDayCard from "../Home/DealOftheDayCard";
+import Badge from "@mui/material/Badge";
+import MailIcon from "@mui/icons-material/Mail";
 const MainDiv = styled.div`
-display: grid;
-grid-template-columns: 100px 500px 500px 200px;
-background-color: whitesmoke;
-justify-content: space-around;
-height: 80px;
-box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);
-
-
-`
+  display: grid;
+  grid-template-columns: 100px 500px 500px 200px;
+  background-color: whitesmoke;
+  justify-content: space-around;
+  height: 80px;
+  box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);
+`;
 const Navlink = styled.div`
 textDecoration: "none", padding: "5px";
  color: "black";
-`
+`;
 const linkStyle = {
   textDecoration: "none",
   padding: "10px",
-  color: "black"
-}
+  color: "black",
+};
 const divStyle = {
   position: "sticky",
   top: "0%",
   backgroundColor: "#ffffff",
-  zIndex: "1"
-
-
-}
-const imgStyle = { height: "30px", margin: "20px" }
-const wish = { fontSize: "10px", paddingLeft: "20px" }
-const wishIcon = { marginTop: "15px" }
-const navStyles = { marginTop: "8px" , padding:"10px" }
-const searchBar = { display: "flex", marginTop: "25px", paddingLeft: "80px", backgroundColor: "whitesmoke" }
+  zIndex: "1",
+};
+const imgStyle = { height: "30px", margin: "20px" };
+const wish = { fontSize: "10px", paddingLeft: "20px" };
+const wishIcon = { marginTop: "15px" };
+const navStyles = { marginTop: "8px", padding: "10px" };
+const searchBar = {
+  display: "flex",
+  marginTop: "25px",
+  paddingLeft: "80px",
+  backgroundColor: "whitesmoke",
+};
 function Navbar() {
-
-
-
-
+  const userAuth = useSelector((state) => state.loginreq.userAuth);
+  const username = useSelector((state) => state.loginreq.username);
 
   return (
     <>
@@ -845,7 +844,7 @@ function Navbar() {
                   STUDIO
                 </a>
                 <div className={styles.dropdownContent}>
-                  <div style={{ width: "600px" ,textAlign:"center" }}>
+                  <div style={{ width: "600px", textAlign: "center" }}>
                     <img
                       src="https://constant.myntassets.com/web/assets/img/studio-logo-new.svg"
                       alt=""
@@ -858,7 +857,11 @@ function Navbar() {
                       style={{ width: "600px", marginTop: "10px" }}
                     />
                     <button
-                      style={{ backgroundColor: "lightblue", margin: "10px" , borderRadius:"5%" }}
+                      style={{
+                        backgroundColor: "lightblue",
+                        margin: "10px",
+                        borderRadius: "5%",
+                      }}
                     >
                       EXPLORE STUDION >
                     </button>
@@ -892,7 +895,7 @@ function Navbar() {
               ></input>
             </div>
           </div>
-          <div style={{ display: "flex", paddingLeft: "0px" , gap:"20px" }}>
+          <div style={{ display: "flex", paddingLeft: "0px", gap: "20px" }}>
             <Link to="/register" style={{ textDecoration: "none" }}>
               <div style={{ fontSize: "10px", broder: "none", color: "black" }}>
                 <PermIdentityIcon
@@ -907,17 +910,39 @@ function Navbar() {
               wishlist
             </div>
 
-            <div style={{ fontSize: "10px", textDecoration: "none", color: "black" ,marginTop:"17px" , paddingLeft:"10px"}}>
-              <Link to="/cart" style={{ textDecoration: "none" }}>
-      
-                <Badge color="secondary" badgeContent={0} showZero>
-                  <ShoppingBagOutlinedIcon  style={{color:"black"}}/>
-                </Badge>
-                <br />
-                <div style={{ textAlign:"center" , color:"black" }}>cart</div>
-              </Link>
-            </div>
+            <div
+              style={{
+                fontSize: "10px",
+                textDecoration: "none",
+                color: "black",
+                marginTop: "17px",
+                paddingLeft: "10px",
+              }}
+            >
+              {userAuth ? (
+                <Link to="/cart" style={{ textDecoration: "none" }}>
+                  <Badge color="secondary" badgeContent={0} showZero>
+                    <ShoppingBagOutlinedIcon style={{ color: "black" }} />
+                  </Badge>
 
+                  <br />
+                  <div style={{ textAlign: "center", color: "black" }}>
+                    cart
+                  </div>
+                </Link>
+              ) : (
+                <Link to="/login" style={{ textDecoration: "none" }}>
+                  <Badge color="secondary" badgeContent={0} showZero>
+                    <ShoppingBagOutlinedIcon style={{ color: "black" }} />
+                  </Badge>
+
+                  <br />
+                  <div style={{ textAlign: "center", color: "black" }}>
+                    cart
+                  </div>
+                </Link>
+              )}
+            </div>
           </div>
         </MainDiv>
       </div>
@@ -925,4 +950,4 @@ function Navbar() {
   );
 }
 
-export default Navbar
+export default Navbar;

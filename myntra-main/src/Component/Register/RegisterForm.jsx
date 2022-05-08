@@ -12,9 +12,14 @@ import "react-toastify/dist/ReactToastify.css";
 import RegisterInput from "./RegisterInput";
 import registerbanner from "../../Images/registerbanner.webp";
 import { useDispatch } from "react-redux";
-import { BannerImg, Container, Form, RegiName, SubmitButton } from "./Register.element";
+import {
+  BannerImg,
+  Container,
+  Form,
+  RegiName,
+  SubmitButton,
+} from "./Register.element";
 const RegisterForm = () => {
-  
   const [values, setValues] = useState({
     username: "",
     email: "",
@@ -37,8 +42,6 @@ const RegisterForm = () => {
       toast.error("Email Id Already Exists!");
     }
   };
-
-
 
   const inputs = [
     {
@@ -98,17 +101,16 @@ const RegisterForm = () => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
   const dispatch = useDispatch();
-  const handleRegisterdata =()=>{
+  const handleRegisterdata = () => {
     dispatch({
-      type:"REGISTER",
+      type: "REGISTER",
       payload: {
-        id: (new Date()).getTime(),
-        values
-
-      }
-    })
+        id: new Date().getTime(),
+        values,
+      },
+    });
     console.log(dispatch);
-  }
+  };
 
   return (
     <Container>

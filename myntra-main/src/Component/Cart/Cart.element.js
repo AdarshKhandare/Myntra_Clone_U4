@@ -20,7 +20,7 @@ export const CartLeft = styled.div`
 `;
 export const AddressDiv = styled.div`
   padding: 8px 16px;
-  height:80px;
+  height:50px;
   border-radius: 4px;
   border: 1px solid #eaeaec;
   display: flex;
@@ -33,6 +33,7 @@ export const AddressDiv = styled.div`
 export const DeliverTo = styled.p``;
 export const ChangeButton = styled.button`
   width: 25%;
+  padding:10px;
   border: 1px solid #ff3f6c;
   border-radius: 4px;
   margin-right: 0;
