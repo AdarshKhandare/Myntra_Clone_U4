@@ -30,7 +30,7 @@ import CartNav from "./CartNav";
 import CartFoot from "./CartFoot";
 import CartRightS from "./CartRight";
 import CartItemsDiv from "./CartItems";
-import { deleteBagData, getBagData } from "../../Redux/Cart/action";
+import { deleteBagData, getBagData } from "../../redux/Cart/action";
 
 const Cart = () => {
   const bagData = useSelector((state) => state.bag.bagData);

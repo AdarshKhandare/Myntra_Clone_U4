@@ -5,7 +5,7 @@ const initState = {
   registerUser: null,
 };
 
-const reducer = (state = initState, { type, payload }) => {
+const Registerreducer = (state = initState, { type, payload }) => {
   switch (type) {
     case REGISTER:
       return {
@@ -17,4 +17,4 @@ const reducer = (state = initState, { type, payload }) => {
       return state;
   }
 };
-export { reducer };
+export { Registerreducer };

@@ -11,7 +11,7 @@ const initState = {
 
 }
 
-export const reducer = (state = initState , action ) =>{
+export const Homereducer = (state = initState , action ) =>{
 
 
     switch(action.type){

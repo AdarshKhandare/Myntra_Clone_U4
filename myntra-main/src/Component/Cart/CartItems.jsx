@@ -24,7 +24,7 @@ import {
   RemoveButtonDiv,
   SizeDiv,
 } from "./Cart.element";
-import { deleteBagData } from "../../Redux/Cart/action";
+import { deleteBagData } from "../../redux/Cart/action";
 import { useDispatch, useSelector } from "react-redux";
 const CartItemsDiv = ({
   images,
