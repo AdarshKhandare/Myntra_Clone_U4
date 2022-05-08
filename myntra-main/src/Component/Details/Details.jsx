@@ -20,6 +20,12 @@ function Details() {
   const [data, setData] = useState([]);
   const id = useParams()
   console.log(id)
+  const cartArr = JSON.parse(localStorage.getItem("cartItem"))||[]
+  const hanldeAdd = (ele) => {
+   
+    cartArr.push(ele)
+    localStorage.setItem("cartItem", JSON.stringify(cartArr))
+  }
   let arr = [
     {
       id: 109,
@@ -213,7 +219,7 @@ function Details() {
                 gap: "20px",
               }}
             >
-              <BagDiv>
+              <BagDiv onClick={()=>{hanldeAdd(ele)}}>
                 <ShoppingBagIcon />
                 <p>
                   <b>ADD TO BAG</b>
