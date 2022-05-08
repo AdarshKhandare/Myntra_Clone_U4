@@ -163,7 +163,6 @@ export const FilterPM = styled.div`
 export const RemoveButtonDiv = styled.div`
   flex: 1;
   text-align: right;
-  margin-right:-60px;
 `;
 export const RButton = styled.button`
   background-color: #fff;

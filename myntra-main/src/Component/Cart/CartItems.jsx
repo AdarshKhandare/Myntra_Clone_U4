@@ -42,13 +42,13 @@ const CartItemsDiv = ({
   discount,
   brand,
 }) => {
- const [count,setCount] = useState(0)
+  const [count, setCount] = useState(0);
   const dispatch = useDispatch();
   const handleModelBagClose = (id) => {
     dispatch(deleteBagData(id));
   };
   const increaseQ = () => {
-    setCount(count+1)
+    setCount(count + 1);
   };
   const decreaseQ = () => {
     setCount(count - 1);

@@ -1,13 +1,9 @@
 import { useState } from "react";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-  signOut,
-} from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebse/firebase-config";
 import { Link, useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import RegisterInput from "./RegisterInput";
 import registerbanner from "../../Images/registerbanner.webp";
@@ -36,7 +32,7 @@ const RegisterForm = () => {
         values.email,
         values.password
       );
-      toast.success("Registration Successful!");
+      toast.info("Registration Successful!");
       navigate("/login");
     } catch (error) {
       toast.error("Email Id Already Exists!");
@@ -126,8 +122,8 @@ const RegisterForm = () => {
           />
         ))}
         <SubmitButton onClick={handleRegisterdata}>Submit</SubmitButton>
-      </Form>
       <ToastContainer />
+      </Form>
       <p>
         Already having Account please
         <Link to="/login">Login</Link>
