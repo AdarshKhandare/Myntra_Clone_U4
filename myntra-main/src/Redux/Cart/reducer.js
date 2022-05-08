@@ -11,7 +11,7 @@ import {
   POST_BAG_FAILURE,
   POST_BAG_REQUEST,
   POST_BAG_SUCCESS,
-} from "./actionTypes";
+} from "./actiontypes";
 
 const initState = {
   isLoading: false,

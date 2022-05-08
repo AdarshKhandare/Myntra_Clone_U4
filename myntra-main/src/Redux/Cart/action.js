@@ -14,7 +14,7 @@ import {
   POST_BAG_FAILURE,
   POST_BAG_REQUEST,
   POST_BAG_SUCCESS,
-} from "./actionTypes";
+} from "./actiontypes";
 
 export const postBagRequest = () => {
   return {
@@ -105,7 +105,7 @@ export const decreaseQty = (idx) => {
   };
 };
 
-export const postBagData = (payload) => async(dispatch) => {
+export const postBagData = (payload) => async (dispatch) => {
   dispatch(postBagRequest());
 
   return axios
@@ -119,7 +119,7 @@ export const postBagData = (payload) => async(dispatch) => {
     });
 };
 
-export const patchBagData = (clickedId, isQtySame) => async(dispatch) => {
+export const patchBagData = (clickedId, isQtySame) => async (dispatch) => {
   dispatch(patchBagRequest());
 
   return axios
