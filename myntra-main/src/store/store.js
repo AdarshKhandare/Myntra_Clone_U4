@@ -1,6 +1,18 @@
-import {legacy_createStore as createStore} from 'redux';
+import {
+  applyMiddleware,
+  legacy_createStore as createStore,
+  compose,
+  combineReducers,
+} from "redux";
+import thunk from "redux-thunk";
+import { Registerreducer } from "../redux/Register/reducer";
+import { bagReducer } from "../redux/Cart/reducer";
+import {Homereducer} from "../redux/Home/reducer"
 
-import { reducer } from "../redux/redux/reducer"
+const rootreducer = combineReducers({
+  bag: bagReducer,
+  register: Registerreducer,
+  home: Homereducer,
+});
 
-
-export const store =  createStore(reducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+export const store = createStore(rootreducer, compose(applyMiddleware(thunk)));

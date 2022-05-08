@@ -102,7 +102,7 @@ const Payment = () => {
 
   const handleSubmit = (e) => {
     console.log("Hello");
-    navigate("/orderconfirm");
+    navigate("/ordersuccess");
   };
   const bagData = useSelector((state) => state.bag.bagData);
 
