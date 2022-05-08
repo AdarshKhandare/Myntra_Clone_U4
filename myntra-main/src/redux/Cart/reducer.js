@@ -126,9 +126,13 @@ export const bagReducer = (state = initState, { type, payload }) => {
         isSuccess: false,
       };
     case INCREASE_BAG_QTY:
-      return {
-        count: state.bagData.id + payload,
-      };
+      return (state.map(item => {
+        if(item.id === payload.id){
+          item.quantity += payload.id;
+        }
+        return item;
+    
+  }));
     case DECREASE_BAG_QTY:
       return {
         count: state.bagData.id - payload,

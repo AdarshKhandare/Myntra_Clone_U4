@@ -92,14 +92,16 @@ export const patchBagFailure = (err) => {
     payload: err,
   };
 };
-export const increaseQty = () => {
+export const increaseQty = (id) => {
   return {
     type: INCREASE_BAG_QTY,
+    payload:id
   };
 };
-export const decreaseQty = () => {
+export const decreaseQty = (id) => {
   return {
     type: DECREASE_BAG_QTY,
+    payload: id,
   };
 };
 
@@ -166,7 +168,7 @@ export const increase = (idx) => async (dispatch) => {
   return axios
     .delete(`http://localhost:5000/cart/${idx}`)
     .then((res) => {
-      dispatch(increaseQty());
+      dispatch(increaseQty(res.data));
       dispatch(getBagData());
     })
     .catch((err) => {
@@ -180,7 +182,7 @@ export const decrease = (idx) => async (dispatch) => {
   return axios
     .delete(`http://localhost:5000/cart/${idx}`)
     .then((res) => {
-      dispatch(decreaseQty());
+      dispatch(decreaseQty(res.data));
       dispatch(getBagData());
     })
     .catch((err) => {
