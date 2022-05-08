@@ -11,7 +11,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import RegisterInput from "./RegisterInput";
 import registerbanner from "../../Images/registerbanner.webp";
-import "./register.module.css";
 import { useDispatch } from "react-redux";
 import { BannerImg, Container, Form, RegiName, SubmitButton } from "./Register.element";
 const RegisterForm = () => {

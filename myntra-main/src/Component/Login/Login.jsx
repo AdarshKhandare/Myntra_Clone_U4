@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "../Register/register.module.css";
 import { ToastContainer } from "react-toastify";
 import {toast}  from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
@@ -8,7 +7,6 @@ import { Link, useNavigate } from "react-router-dom";
 import {
   BannerImg,
   Container,
-  Containerr,
   Form,
   FormInput,
   FormInputDiv,
@@ -16,10 +14,7 @@ import {
   SubmitButton,
 } from "./Login.element";
 import {
-  createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  onAuthStateChanged,
-  signOut,
 } from "firebase/auth";
 import { auth } from "../../firebse/firebase-config";
 

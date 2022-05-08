@@ -76,7 +76,7 @@ export const deleteBagFailure = (err) => {
 
 export const patchBagRequest = () => {
   return {
-    type: "PATCH_BAG_REQUEST",
+    type:  "PATCH_BAG_REQUEST",4524
   };
 };
 

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { FormInput, FormInputDiv, Span } from "./Register.element";
-import "./register.module.css";
 
 const RegisterInput = (props) => {
   const [focused, setFocused] = useState(false);
