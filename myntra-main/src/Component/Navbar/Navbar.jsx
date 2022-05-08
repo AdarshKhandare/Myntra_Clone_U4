@@ -13,6 +13,7 @@ import { rootShouldForwardProp } from '@mui/material/styles/styled';
 import { getDealsOftheData } from '../../redux/Home/actions';
 import { useSelect } from '@mui/base';
 import DealOftheDayCard from '../Home/DealOftheDayCard';
+import { Badge } from '@mui/material';
 
 const MainDiv = styled.div`
 display: grid;
@@ -907,8 +908,9 @@ function Navbar() {
             </div>
             <Link to="/cart">
               <div style={wish}>
-                <ShoppingBagOutlinedIcon style={wishIcon} /> <br />
-                bag
+                <Badge color="secondary" badgeContent={0} showZero>
+                  <ShoppingBagOutlinedIcon style={wishIcon} />
+                </Badge>
               </div>
             </Link>
           </div>
