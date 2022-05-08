@@ -892,7 +892,7 @@ function Navbar() {
               ></input>
             </div>
           </div>
-          <div style={{ display: "flex", paddingLeft: "20px" }}>
+          <div style={{ display: "flex", paddingLeft: "0px" , gap:"20px" }}>
             <Link to="/register" style={{ textDecoration: "none" }}>
               <div style={{ fontSize: "10px", broder: "none", color: "black" }}>
                 <PermIdentityIcon
