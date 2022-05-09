@@ -114,22 +114,23 @@ function Details() {
                     <div
                       style={{
                         display: "flex",
+                        justifyContent: "space-between",
                         gap: "10px",
                         width: "270px",
-                        fontSize: "22px",
+                        fontSize: "18px",
+                        marginBottom: "10px"
                       }}
                     >
                       <p>
                         {" "}
                         <b
-                          style={{ color: "darkslategray" }}
+                          style={{ color: "darkslategray", fontSize: "18px" }}
                         >{`Rs.${ele.price}`}</b>
                       </p>
                       <p
                         style={{
                           color: "#8b8d97",
-                          fontSize: "18px",
-                          marginTop: "25px",
+                          
                         }}
                       >
                         {" "}
@@ -139,7 +140,7 @@ function Details() {
                         </span>
                       </p>
                       <p style={{ color: "#ee9d20" }}>
-                        <b> {`(${ele.discount}% OFF)`} </b>
+                        <b style={{fontSize: "18px"}}> {`(${ele.discount}% OFF)`}  </b>
                       </p>
                     </div>
                     <div
@@ -194,7 +195,9 @@ function Details() {
                   >
                     <BagDiv
                       onClick={() => {
-                        dispatch(()=>{addToData(ele)});
+                        dispatch(() => {
+                          addToData(ele);
+                        });
                       }}
                     >
                       <ShoppingBagIcon />
@@ -313,7 +316,7 @@ function Details() {
                         </span>
                       </b>
                     </p>
-                    <ul style={{ marginLeft: "-26px" }}>
+                    <ul >
                       <li>
                         Applicable on: Orders above Rs. 3999 (only on first
                         purchase)
@@ -332,7 +335,7 @@ function Details() {
                     <p>
                       <b>EMI option available</b>
                     </p>
-                    <ul style={{ marginLeft: "-26px" }}>
+                    <ul>
                       <li>EMI starting from Rs.154/month</li>
                     </ul>
                     <p style={{ color: "#e7396a", fontWeight: "570" }}>
