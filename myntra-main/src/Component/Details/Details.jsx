@@ -40,11 +40,11 @@ function Details() {
   return (
     <>
       {
-        data.map((ele) => {
+        data.map((ele) => { 
           return (
             <>
-                <Navbar/>
-            <DetailsMainDiv>
+              <Navbar/>
+            <DetailsMainDiv key = {ele.id}>
         <ImageContainer>
           <ImgDiv>
             <Img src={ele.images.image1} />

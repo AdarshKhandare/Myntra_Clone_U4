@@ -26,13 +26,7 @@ const CartRightS = () => {
     let totalDiscount = totalMRP - totalAmount;
 
   const placeOrder = () => {
-    if(auth){
       navigate("/address")
-      console.log("useravailabel",auth)
-    }
-    else{
-      navigate("/register")
-    }
   }
   return (
     <CartRight>

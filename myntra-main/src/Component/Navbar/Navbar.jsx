@@ -3,7 +3,7 @@ import styles from "../style/Navbar.module.css";
 // import styles from './Todo.module.css'
 import styled from "styled-components";
 
-import { BrowserRouter, Route, Link, NavLink } from "react-router-dom";
+import { BrowserRouter, Route, Link, NavLink, useNavigate } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
@@ -24,7 +24,7 @@ const MainDiv = styled.div`
   box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);
 `;
 const Navlink = styled.div`
-  text-decoration:none;
+  text-decoration: none;
   padding: 5px;
   color: black;
 `;
@@ -39,7 +39,7 @@ const divStyle = {
   backgroundColor: "#ffffff",
   zIndex: "1",
 };
-const imgStyle = { height: "30px", margin: "20px" };
+const imgStyle = { height: "30px", margin: "20px", cursor: "pointer"};
 const wish = { fontSize: "10px", paddingLeft: "20px" };
 const wishIcon = { marginTop: "15px" };
 const navStyles = { marginTop: "8px", padding: "10px" };
@@ -50,6 +50,7 @@ const searchBar = {
   backgroundColor: "whitesmoke",
 };
 function Navbar() {
+  const navigate = useNavigate()
   const userAuth = useSelector((state) => state.loginreq.userAuth);
   const username = useSelector((state) => state.loginreq.username);
 
@@ -59,6 +60,7 @@ function Navbar() {
         <MainDiv>
           <div style={{}}>
             <img
+              onClick={() => navigate("/")}
               style={imgStyle}
               src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Myntra_logo.png"
               alt=""
@@ -864,7 +866,7 @@ function Navbar() {
                         borderRadius: "5%",
                       }}
                     >
-                     { `EXPLORE STUDION >`}
+                      {`EXPLORE STUDION >`}
                     </button>
                   </div>
                 </div>

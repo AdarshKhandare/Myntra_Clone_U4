@@ -337,8 +337,33 @@
   ],
   "cart": [
     {
-<<<<<<< Updated upstream
-=======
+      "id": 27,
+      "title": "Women Mustard Yellow & Pink Printed Pure Cotton Anarkali Tiered Maxi Dress",
+      "price": 2249,
+      "categories": "dresses",
+      "gender": "women",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Mustard yellow and Pink printed woven Anarkali tiered maxi dress with gathers, has a round neck, three-quarter sleeves, an attached lining, and flounce hem",
+      "brand": "HERE&NOW",
+      "color": "yellow",
+      "discount": 55,
+      "off_price": 4999,
+      "images": {
+        "image1": "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/13078216/2020/12/18/bc248d16-5d0c-489d-b5c1-e2c8ee5671471608291727502-W-Yellow-Printed-Tiered-Dress-1091608291724681-1.jpg",
+        "image2": "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/13078216/2020/12/18/c1ad9dcf-ce37-44b2-b030-6f5cf4d476bb1608291727416-W-Yellow-Printed-Tiered-Dress-1091608291724681-3.jpg",
+        "image3": "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/13078216/2020/12/18/eb96c1bc-e445-491f-a463-19e3448c8c311608291727377-W-Yellow-Printed-Tiered-Dress-1091608291724681-4.jpg",
+        "image4": "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/13078216/2020/12/18/2fd07bb2-f22b-471a-ae9a-a7a6a6c6ccdd1608291727335-W-Yellow-Printed-Tiered-Dress-1091608291724681-5.jpg"
+      },
+      "rating": 4.4,
+      "count": 567
+    },
+    {
       "id": 11,
       "categories": "shirt",
       "size": "Sizes : 39, 40, 42, 44...",
@@ -365,61 +390,6 @@
       },
       "rating": 3.9,
       "count": 29
-    },
-    {
-      "id": 12,
-      "categories": "shirt",
-      "size": "Sizes : 39, 40, 42, 44...",
-      "title": "Men Blue Slim Fit Solid Casual Shirt",
-      "price": "579",
-      "gender": "men",
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL",
-        "XXL"
-      ],
-      "description": "Blue solid casual shirt, has a spread collar, button placket, 1 pocket, long sleeves, curved hem",
-      "brand": "HERE&NOW",
-      "color": "green",
-      "discount": 42,
-      "off_price": 999,
-      "images": {
-        "image1": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/2290028/2018/2/7/11517989836087-HIGHLANDER-Men-Blue-Slim-Fit-Solid-Casual-Shirt-4461517989835897-1.jpg",
-        "image2": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/2290028/2018/2/7/11517989835985-HIGHLANDER-Men-Blue-Slim-Fit-Solid-Casual-Shirt-4461517989835897-5.jpg",
-        "image3": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/2290028/2018/2/7/11517989836063-HIGHLANDER-Men-Blue-Slim-Fit-Solid-Casual-Shirt-4461517989835897-2.jpg",
-        "image4": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/2290028/2018/2/7/11517989836001-HIGHLANDER-Men-Blue-Slim-Fit-Solid-Casual-Shirt-4461517989835897-4.jpg"
-      },
-      "rating": 4.1,
-      "count": 29
-    },
-    {
-      "id": 22,
-      "title": "Women Pink Daisy Duck Printed Sweatshirt",
-      "price": 799,
-      "gender": "women",
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL",
-        "XXL"
-      ],
-      "categories": "tops",
-      "description": "",
-      "brand": "Mast & Harbour",
-      "color": "pink",
-      "discount": 60,
-      "off_price": 1999,
-      "images": {
-        "image1": "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/10278877/2019/11/12/352e3703-d6de-43d5-804b-370082c81f6d1573553236671-Kook-N-Keech-Disney-Women-Pink-Daisy-Duck-Printed-Sweatshirt-1.jpg",
-        "image2": "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/10278877/2019/11/12/ebe54fda-7589-4a0b-9332-a35e6b5ee3571573553236609-Kook-N-Keech-Disney-Women-Pink-Daisy-Duck-Printed-Sweatshirt-2.jpg",
-        "image3": "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/10278877/2019/11/12/91b2fadd-735f-486c-9bfa-bcb3ba2ea9b71573553236558-Kook-N-Keech-Disney-Women-Pink-Daisy-Duck-Printed-Sweatshirt-3.jpg",
-        "image4": "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/10278877/2019/11/12/a28f02d9-e138-43e2-ab00-03060e27d03d1573553236511-Kook-N-Keech-Disney-Women-Pink-Daisy-Duck-Printed-Sweatshirt-4.jpg"
-      },
-      "rating": 4.5,
-      "count": 835
     }
   ],
   "men": [
@@ -480,7 +450,6 @@
       "count": 29
     },
     {
->>>>>>> Stashed changes
       "id": 13,
       "categories": "kurta",
       "size": "Sizes : 39, 40, 42, 44...",
@@ -509,8 +478,6 @@
       "count": 29
     },
     {
-<<<<<<< Updated upstream
-=======
       "id": 14,
       "categories": "tshirt",
       "size": "Sizes : 39, 40, 42, 44...",
@@ -539,7 +506,6 @@
       "count": 29
     },
     {
->>>>>>> Stashed changes
       "id": 15,
       "categories": "short",
       "size": "Sizes : 39, 40, 42, 44...",
@@ -594,8 +560,6 @@
       },
       "rating": 3.9,
       "count": 2955
-<<<<<<< Updated upstream
-=======
     },
     {
       "id": 17,
@@ -2900,7 +2864,6 @@
       },
       "ratings": 4.8,
       "count": 25
->>>>>>> Stashed changes
     }
   ]
 }
