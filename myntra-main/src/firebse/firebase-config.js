@@ -6,7 +6,7 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: process.env.API_KEY,
+  apiKey: "AIzaSyAAg_z0CK8oldTtduaa8Zs30w3LcVSdKZo",
   authDomain: "myntra-auth-cd6a6.firebaseapp.com",
   projectId: "myntra-auth-cd6a6",
   storageBucket: "myntra-auth-cd6a6.appspot.com",
