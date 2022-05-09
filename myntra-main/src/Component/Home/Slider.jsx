@@ -52,7 +52,7 @@ export const     SlideShow = () => {
             key={index}
             
           >
-            <img src={backgroundColor} style={{width:"100%" , height:"400px" ,objectFit:"fill" ,transition: "all 1.5s ease"}} alt= ""/>
+            <img src={backgroundColor} style={{width:"100%" , height:"400px" ,objectFit:"fill" ,transition: "all 2s ease"}} alt= ""/>
           </div>
         ))}
       </div>

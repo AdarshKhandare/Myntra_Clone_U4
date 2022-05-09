@@ -1,10 +1,12 @@
 import {
+  DECREASE_BAG_QTY,
   DELETE_BAG_FAILURE,
   DELETE_BAG_REQUEST,
   DELETE_BAG_SUCCESS,
   GET_BAG_FAILURE,
   GET_BAG_REQUEST,
   GET_BAG_SUCCESS,
+  INCREASE_BAG_QTY,
   PATCH_BAG_FAILURE,
   PATCH_BAG_REQUEST,
   PATCH_BAG_SUCCESS,
@@ -18,6 +20,7 @@ const initState = {
   isError: false,
   isSuccess: false,
   bagData: [],
+  count:0,
 };
 
 export const bagReducer = (state = initState, { type, payload }) => {
@@ -122,20 +125,18 @@ export const bagReducer = (state = initState, { type, payload }) => {
         isError: true,
         isSuccess: false,
       };
-    // case INCREASE_BAG_QTY:
-    //   return {
-    //     ...state,
-    //     isLoading: false,
-    //     isError: true,
-    //     isSuccess: false,
-    //   };
-    // case DECREASE_BAG_QTY:
-    //   return {
-    //     ...state,
-    //     isLoading: false,
-    //     isError: true,
-    //     isSuccess: false,
-    //   };
+    case INCREASE_BAG_QTY:
+      return (state.map(item => {
+        if(item.id === payload.id){
+          item.quantity += payload.id;
+        }
+        return item;
+    
+  }));
+    case DECREASE_BAG_QTY:
+      return {
+        count: state.bagData.id - payload,
+      };
 
     default:
       return state;

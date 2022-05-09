@@ -1,20 +1,21 @@
 import { useState } from "react";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-  signOut,
-} from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebse/firebase-config";
 import { Link, useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import RegisterInput from "./RegisterInput";
 import registerbanner from "../../Images/registerbanner.webp";
-import "./register.css";
 import { useDispatch } from "react-redux";
+import {
+  BannerImg,
+  Container,
+  Form,
+  RegiName,
+  SubmitButton,
+} from "./Register.element";
 const RegisterForm = () => {
-  
   const [values, setValues] = useState({
     username: "",
     email: "",
@@ -31,14 +32,12 @@ const RegisterForm = () => {
         values.email,
         values.password
       );
-      toast.success("Registration Successful!");
+      toast.info("Registration Successful!");
       navigate("/login");
     } catch (error) {
       toast.error("Email Id Already Exists!");
     }
   };
-
-
 
   const inputs = [
     {
@@ -98,23 +97,22 @@ const RegisterForm = () => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
   const dispatch = useDispatch();
-  const handleRegisterdata =()=>{
+  const handleRegisterdata = () => {
     dispatch({
-      type:"REGISTER",
+      type: "REGISTER",
       payload: {
-        id: (new Date()).getTime(),
-        values
-
-      }
-    })
+        id: new Date().getTime(),
+        values,
+      },
+    });
     console.log(dispatch);
-  }
+  };
 
   return (
-    <div className="app">
-      <img src={registerbanner} alt="" />
-      <form onSubmit={handleSubmit}>
-        <h3>Register</h3>
+    <Container>
+      <BannerImg src={registerbanner} alt="" />
+      <Form onSubmit={handleSubmit}>
+        <RegiName>Register</RegiName>
         {inputs.map((input) => (
           <RegisterInput
             key={input.id}
@@ -123,14 +121,14 @@ const RegisterForm = () => {
             onChange={onChange}
           />
         ))}
-        <button onClick={handleRegisterdata}>Submit</button>
-      </form>
+        <SubmitButton onClick={handleRegisterdata}>Submit</SubmitButton>
       <ToastContainer />
+      </Form>
       <p>
         Already having Account please
         <Link to="/login">Login</Link>
       </p>
-    </div>
+    </Container>
   );
 };
 

@@ -11,7 +11,7 @@ export const FormLeftdiv = styled.div`
   width: 60%;
 `;
 export const FormDiv = styled.form`
-  margin-left: 30%;
+  
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -26,6 +26,7 @@ margin: 0;
 `
 export const ContactDetailsdiv = styled.div`
   border-radius: 4px;
+  margin-left: 30%;
   padding: 8px 16px;
   border: 1px solid #eaeaec;
   display: flex;
@@ -54,7 +55,7 @@ export const Addressdiv = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  
+  margin-left: 30%;
 `;
 export const PinCodeInput = styled.input`
   border-radius: 4px;
@@ -93,6 +94,8 @@ export const StateInput = styled.input`
 `;
 
 export const SaveAddressdiv = styled.div`
+  margin-left: 30%;
+  width: 460px;
   border-radius: 4px;
   padding: 8px 16px;
   border: 1px solid #eaeaec;
@@ -101,7 +104,6 @@ export const SaveAddressdiv = styled.div`
   align-items: center;
   text-align: center;
   gap: 25px;
-  width: 90%;
 `;
 export const SaveHome = styled.button`
   background-color: #fff;
@@ -135,13 +137,16 @@ export const ButtonDiv = styled.div`
   padding: 8px 16px;
   border: 1px solid #eaeaec;
   width: 90%;
-  margin-bottom:20px;;
+  margin-bottom: 20px;
+  margin-left: 30%;
+  width: 460px;
 `;
 
 
 export const AddAddressButton = styled.button`
   cursor: pointer;
   background-color: #ff3f6c;
+  border-radius: 4px;
   color: #fff;
   width: 100%;
   border: none;
@@ -171,6 +176,7 @@ export const PlaceorderDiv = styled.div`
 export const PlaceorderButton = styled.button`
   cursor: pointer;
   background-color: #ff3f6c;
+  border-radius: 4px;
   color: #fff;
   width: 100%;
   border: none;

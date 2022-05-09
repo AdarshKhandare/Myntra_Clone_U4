@@ -202,7 +202,7 @@ const Payment = () => {
           <PayemntMain>
             <PaymentMethods>
               <CashOnDel>
-                <CurrencyRupeeOutlined sx={{ width: "25px", height: "25px" ,}} />
+                <CurrencyRupeeOutlined sx={{ width: "25px", height: "25px" }} />
                 <Cod>Cash On Delivery</Cod>
               </CashOnDel>
               <CardCDdiv>
@@ -279,7 +279,9 @@ const Payment = () => {
 
         <FormRightDiv>
           <AllPriceDiv>
-            <PriceDetailsT>PRICE DETAILS (1 items)</PriceDetailsT>
+            <PriceDetailsT>
+              PRICE DETAILS ({bagData.length} Items)
+            </PriceDetailsT>
             <TmrpDiv>
               <Tmrp>TOTAL MRP</Tmrp>
               <Tmrprs>₹{totalMRP}</Tmrprs>
