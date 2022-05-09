@@ -43,19 +43,19 @@ function InnerContent() {
   // console.log("data", dealsOftheDay);
   const dispatch = useDispatch();
   useEffect(() => {
-    fetch(`http://localhost:5000/dealsofthday`)
+    fetch(`https://myntrafinaldata.herokuapp.com/dealsofthday`)
       .then((res) => res.json())
       .then((res) => dispatch(getDealsOftheData(res)))
       .catch((e) => console.log(e));
-    fetch(`http://localhost:5000/bestOfMyntra`)
+    fetch(`https://myntrafinaldata.herokuapp.com/bestOfMyntra`)
       .then((res) => res.json())
       .then((res) => dispatch(getBestOfMyntra(res)))
       .catch((e) => console.log(e));
-    fetch(`http://localhost:5000/topPicks`)
+    fetch(`https://myntrafinaldata.herokuapp.com/topPicks`)
       .then((res) => res.json())
       .then((res) => dispatch(getTopPicksData(res)))
       .catch((e) => console.log(e));
-    fetch(`http://localhost:5000/categoriesToBag`)
+    fetch(`https://myntrafinaldata.herokuapp.com/categoriesToBag`)
       .then((res) => res.json())
       .then((res) => dispatch(getCategoriesData(res)))
       .catch((e) => console.log(e));
@@ -63,19 +63,19 @@ function InnerContent() {
       .then((res) => res.json())
       .then((res) => dispatch(getCategoriesData(res)))
       .catch((e) => console.log(e));
-    fetch(`http://localhost:5000/GiftingCards`)
+    fetch(`https://myntrafinaldata.herokuapp.com/GiftingCards`)
       .then((res) => res.json())
       .then((res) => dispatch(getGiftingCards(res)))
       .catch((e) => console.log(e));
-    fetch(`http://localhost:5000/dealsoOnLatestArival`)
+    fetch(`https://myntrafinaldata.herokuapp.com/dealsoOnLatestArival`)
       .then((res) => res.json())
       .then((res) => dispatch(getdealsOflaatestArival(res)))
       .catch((e) => console.log(e));
-    fetch(`http://localhost:5000/newInTopBrands`)
+    fetch(`https://myntrafinaldata.herokuapp.com/newInTopBrands`)
       .then((res) => res.json())
       .then((res) => dispatch(getNewTopBrands(res)))
       .catch((e) => console.log(e));
-    fetch(`http://localhost:5000/topInfluencerExclusiveStyles`)
+    fetch(`https://myntrafinaldata.herokuapp.com/topInfluencerExclusiveStyles`)
       .then((res) => res.json())
       .then((res) => dispatch(getTopInInfluncerExclusive(res)))
       .catch((e) => console.log(e));

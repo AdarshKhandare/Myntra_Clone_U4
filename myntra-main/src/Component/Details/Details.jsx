@@ -30,7 +30,7 @@ function Details() {
   const dispatch = useDispatch();
 
   const getData = async () => {
-    let res = await fetch(`http://localhost:5000/men/${id}`);
+    let res = await fetch(`https://myntrafinaldata.herokuapp.com/men/${id}`);
     let datas = await res.json();
     console.log(datas);
     setData([datas]);

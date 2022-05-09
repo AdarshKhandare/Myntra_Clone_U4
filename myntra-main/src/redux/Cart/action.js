@@ -109,7 +109,7 @@ export const postBagData = (payload) => async (dispatch) => {
   dispatch(postBagRequest());
 
   return axios
-    .post("http://localhost:5000/cart", payload)
+    .post("https://myntrafinaldata.herokuapp.com/cart", payload)
     .then((res) => {
       dispatch(postBagSuccess());
       dispatch(getBagData());
@@ -123,7 +123,7 @@ export const patchBagData = (clickedId, isQtySame) => async (dispatch) => {
   dispatch(patchBagRequest());
 
   return axios
-    .patch(`http://localhost:5000/cart/${clickedId}`, {
+    .patch(`https://myntrafinaldata.herokuapp.com/cart/${clickedId}`, {
       quantity: `${isQtySame}`,
     })
     .then((res) => {
@@ -139,7 +139,7 @@ export const deleteBagData = (idx) => async (dispatch) => {
   // dispatch( deleteBagRequest() )
 
   return axios
-    .delete(`http://localhost:5000/cart/${idx}`)
+    .delete(`https://myntrafinaldata.herokuapp.com/cart/${idx}`)
     .then((res) => {
       dispatch(deleteBagSuccess());
       dispatch(getBagData());
@@ -153,7 +153,7 @@ export const getBagData = (payload) => async(dispatch) => {
   // dispatch( getBagRequest() )
 
   return axios
-    .get("http://localhost:5000/cart", payload)
+    .get("https://myntrafinaldata.herokuapp.com/cart", payload)
     .then((res) => {
       dispatch(getBagSuccess(res.data));
     })
@@ -166,7 +166,7 @@ export const increase = (idx,payload) => async (dispatch) => {
   // dispatch( getBagRequest() )
 
   return axios
-    .delete(`http://localhost:5000/cart/${idx}`)
+    .delete(`https://myntrafinaldata.herokuapp.com/cart/${idx}`)
     .then((res) => {
       dispatch(getBagSuccess(res.data));
     })
@@ -179,7 +179,7 @@ export const decrease = (idx) => async (dispatch) => {
   // dispatch( getBagRequest() )
 
   return axios
-    .delete(`http://localhost:5000/cart/${idx}`)
+    .delete(`https://myntrafinaldata.herokuapp.com/cart/${idx}`)
     .then((res) => {
       dispatch(decreaseQty(res.data));
       dispatch(getBagData());

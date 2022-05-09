@@ -50,7 +50,7 @@ function Card() {
   }
   useEffect(() => {
     const getData = async () => {
-      let res = await fetch("http://localhost:5000/men");
+      let res = await fetch("https://myntrafinaldata.herokuapp.com/men");
       let data = await res.json();
       setData(data);
       // console.log(data);
