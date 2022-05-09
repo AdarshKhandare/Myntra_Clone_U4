@@ -122,7 +122,7 @@ const Payment = () => {
     <Container>
       <NavContainer>
         <NavLogo>
-          <Logo src={myntraLogo} />
+          <Logo src={myntraLogo} onClick={() => navigate("/")} />
         </NavLogo>
         <NavCheckOutSteps>
           <BagCheckout>BAG</BagCheckout>

@@ -19,6 +19,7 @@ export const NavLogo = styled.div`
 export const Logo = styled.img`
   width: 100px;
   height: 60px;
+  cursor: pointer;
 `;
 
 export const NavCheckOutSteps = styled.div`

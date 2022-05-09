@@ -15,12 +15,14 @@ import {
 
 import myntraLogo from "../../Images/myntraLogo.png";
 import secure from "../../Images/secure.png";
+import { useNavigate } from "react-router-dom";
 
 const CartNav = () => {
+   const navigate = useNavigate();
   return (
     <NavContainer>
       <NavLogo>
-        <Logo src={myntraLogo} />
+        <Logo src={myntraLogo} onClick={() => navigate("/")} />
       </NavLogo>
       <NavCheckOutSteps>
         <BagCheckout>BAG</BagCheckout>

@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const ContainerDiv = styled.div`
 margin:10px;
 display:grid;
+grid-template-columns: repeat(5,1fr);
 gap:30px;
-grid-template-columns : repeat(4,1fr);
 @media (max-width: 768px) and (min-width: 350px)
 {
   grid-template-columns : repeat(2,1fr);
@@ -18,7 +18,7 @@ grid-template-columns : repeat(4,1fr);
 
 export let MainDiv = styled.div`
   width: 210px;
-  ${'' /* border: 1px solid black; */}
+ /* border: 1px solid black; */
   height: 307.8px;
   cursor:pointer
 

@@ -33,6 +33,7 @@ import {
   increaseQty,
 } from "../../redux/Cart/action";
 import { useDispatch, useSelector } from "react-redux";
+import {useNavigate} from "react-router-dom"
 const CartItemsDiv = ({
   images,
   id,
@@ -43,6 +44,7 @@ const CartItemsDiv = ({
   discount,
   brand,
 }) => {
+  const navigate = useNavigate()
   const [count , setCount] = useState(0)
   const bagData = useSelector((state) => state.bag.bagData);
   const dispatch = useDispatch();
@@ -68,7 +70,7 @@ const CartItemsDiv = ({
   return (
     <CartItemDiv>
       <Imagediv>
-        <ItemIamge src={images.image1} />
+        <ItemIamge src={images.image1}/>
       </Imagediv>
       <ItemInfoDiv>
         <Brand>{brand}</Brand>

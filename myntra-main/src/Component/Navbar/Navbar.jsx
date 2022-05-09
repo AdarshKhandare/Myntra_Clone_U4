@@ -924,7 +924,7 @@ function Navbar() {
                 paddingLeft: "10px",
               }}
             >
-              {userAuth ? (
+              {!userAuth ? (
                 <Link to="/cart" style={{ textDecoration: "none" }}>
                   <Badge color="secondary" badgeContent={count} >
                     <ShoppingBagOutlinedIcon style={{ color: "black" }} />
