@@ -9,12 +9,13 @@ let ContentDiv = styled.div`
   position: absolute;
   background: white;
   height: 140px;
-  gap: 10px;
+  gap: 20px;
   color: grey;
-  textdecoration: none;
+  text-decoration: none;
   width: 235px;
-  border: 1px solid grey;
+  border: 0.5px solid lightgrey;
   float: right;
+  padding:20px;
   margin-top: -20px;
   margin-left: 20px;
 `;

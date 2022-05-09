@@ -5,6 +5,7 @@ export const DetailsMainDiv = styled.div`
   width: 100%;
   height: auto;
   display: flex;
+  margin-bottom:15px;
 `;
 
 export const ImageContainer = styled.div`
