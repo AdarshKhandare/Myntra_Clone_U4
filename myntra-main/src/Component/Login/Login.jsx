@@ -34,9 +34,8 @@ const Login = () => {
         draggable: true,
         progress: undefined,
       });
-      setInterval(function () {
-        navigate("/cart");
-      }, 5000);
+      navigate("/cart");
+
       console.log(user);
     } catch (error) {
       console.log(error.message);
