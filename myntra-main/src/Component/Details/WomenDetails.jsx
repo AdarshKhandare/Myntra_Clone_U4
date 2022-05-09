@@ -14,10 +14,16 @@ import {
   BagDiv,
   RatingDiv,
 } from "./detailStyled";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer"
 import StarIcon from "@mui/icons-material/Star";
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import {postBagData} from "../../redux/Cart/action"
 function WomenDetails() {
   const [data, setData] = useState([]);
+  const dispatch = useDispatch()
+
   const id = useParams()
   console.log(id)
   const cartArr = JSON.parse(localStorage.getItem("cartItem"))||[]
@@ -69,7 +75,9 @@ function WomenDetails() {
       {
         data.map((ele) => {
           return (
-            <DetailsMainDiv>
+              <>
+                  <Navbar/>
+              <DetailsMainDiv>
         <ImageContainer>
           <ImgDiv>
             <Img src={ele.images.image1} />
@@ -125,7 +133,8 @@ function WomenDetails() {
                   style={{
                     color: "#8b8d97",
                     alignItems: "center",
-                    alignSelf: "center",
+                                              alignSelf: "center",
+                                             
                   }}
                 >
                   {" "}
@@ -219,7 +228,7 @@ function WomenDetails() {
                 gap: "20px",
               }}
             >
-              <BagDiv onClick={()=>{hanldeAdd(ele)}}>
+              <BagDiv onClick={()=>{dispatch(postBagData(ele))}}>
                 <ShoppingBagIcon />
                 <p>
                   <b>ADD TO BAG</b>
@@ -272,7 +281,9 @@ function WomenDetails() {
             </div>
           </div>
         </SubDetailsDiv>
-      </DetailsMainDiv>
+                  </DetailsMainDiv>
+                  <Footer/>
+           </>
           )
         })
     }

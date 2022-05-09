@@ -43,6 +43,8 @@ const Cart = () => {
         Number(e.off_price) * ((100 - Number(e.discount)) / 100)
       ))
   );
+
+  console.log(bagData)
   // console.log(totalAmount);
 
   useEffect(() => {

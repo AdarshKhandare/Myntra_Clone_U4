@@ -75,7 +75,7 @@ const CartItemsDiv = ({
         <Name>{title}</Name>
         <Filtercontainer>
           <SizeDiv>
-            <h4>{`Size: ${sizes[3]}`}</h4>
+            <h4>{`Size: ${sizes[1]}`}</h4>
           </SizeDiv>
           <FilterPM>
             <AddBoxOutlined

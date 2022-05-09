@@ -24,7 +24,7 @@ const MainDiv = styled.div`
   box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);
 `;
 const Navlink = styled.div`
-  text-decoration: none;
+  text-decoration:none;
   padding: 5px;
   color: black;
 `;

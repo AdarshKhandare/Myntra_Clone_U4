@@ -3,6 +3,8 @@ import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined';
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined';
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer"
 import {
   DetailsMainDiv,
   ImageContainer,
@@ -16,46 +18,17 @@ import {
 } from "./detailStyled";
 import StarIcon from "@mui/icons-material/Star";
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import {postBagData} from "../../redux/Cart/action"
 function Details() {
   const [data, setData] = useState([]);
-  const id = useParams()
+  const {id} = useParams()
   console.log(id)
-  const cartArr = JSON.parse(localStorage.getItem("cartItem"))||[]
-  const hanldeAdd = (ele) => {
-   
-    cartArr.push(ele)
-    localStorage.setItem("cartItem", JSON.stringify(cartArr))
-  }
-  let arr = [
-    {
-      id: 109,
-      title: "Men Blue Cotton Fine-knit Jumper",
-      price: 1499,
-      gender: "men",
-      sizes: ["S", "M", "L", "XL", "XXL"],
-      description:
-        "Jumper in a soft, fine cotton knit with a round neck, long sleeves and ribbing at the cuffs and hem.",
-      category: "Men's Clothing",
-      brand: "H&M",
-      color: "blue",
-      discount: 40,
-      off_price: 1799,
-      images: {
-        image1:
-          "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/15545930/2021/9/27/bf790580-9d52-423a-8083-38f1ca7f47511632723350062Fine-knitjumper1.jpg",
-        image2:
-          "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/15545930/2021/9/27/2cc4b764-c362-462a-a776-52102f5c9ec11632723350071Fine-knitjumper2.jpg",
-        image3:
-          "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/15545930/2021/9/27/83b555e8-d9e7-4b6e-99dd-1b768d33e3c31632723350081Fine-knitjumper3.jpg",
-        image4:
-          "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/15545930/2021/9/27/89440af7-6ba1-42a2-a299-af466939affd1632723350237Fine-knitjumper4.jpg",
-      },
-      rating: 4.6,
-      count: 22,
-    },
-  ];
+
+  const dispatch = useDispatch()
+  
   const getData = async () => {
-    let res = await fetch(`http://localhost:5000/posts/${id.id}`)
+    let res = await fetch(`http://localhost:5000/men/${id}`)
     let datas = await res.json();
     console.log(datas)
     setData([datas])
@@ -63,12 +36,14 @@ function Details() {
   useEffect(() => {
       getData()  
   },[])
-  console.log(arr);
+  
   return (
     <>
       {
         data.map((ele) => {
           return (
+            <>
+                <Navbar/>
             <DetailsMainDiv>
         <ImageContainer>
           <ImgDiv>
@@ -219,7 +194,7 @@ function Details() {
                 gap: "20px",
               }}
             >
-              <BagDiv onClick={()=>{hanldeAdd(ele)}}>
+              <BagDiv onClick={()=>{dispatch(postBagData(ele))}}>
                 <ShoppingBagIcon />
                 <p>
                   <b>ADD TO BAG</b>
@@ -273,6 +248,8 @@ function Details() {
           </div>
         </SubDetailsDiv>
       </DetailsMainDiv>
+      <Footer/>
+            </>
           )
         })
     }
