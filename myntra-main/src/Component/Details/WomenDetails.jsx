@@ -110,26 +110,26 @@ function Details() {
                     </RatingDiv>
                   </div>
                   <hr></hr>
-                  <div style={{ textAlign: "left", marginTop: "-18px" }}>
+                  <div style={{ textAlign: "left", marginTop: "-5px" ,}}>
                     <div
                       style={{
                         display: "flex",
                         gap: "10px",
                         width: "270px",
-                        fontSize: "22px",
+                       
                       }}
                     >
                       <p>
                         {" "}
                         <b
-                          style={{ color: "darkslategray" }}
+                          style={{ color: "darkslategray", fontSize: "22px", }}
                         >{`Rs.${ele.price}`}</b>
                       </p>
                       <p
                         style={{
                           color: "#8b8d97",
                           fontSize: "18px",
-                          marginTop: "25px",
+                          marginTop: "12px",
                         }}
                       >
                         {" "}
@@ -138,8 +138,8 @@ function Details() {
                           {`${ele.off_price}`}{" "}
                         </span>
                       </p>
-                      <p style={{ color: "#ee9d20" }}>
-                        <b> {`(${ele.discount}% OFF)`} </b>
+                      <p style={{ color: "#ee9d20", }}>
+                        <b style={{fontSize: "22px"}}> {`(${ele.discount}% OFF)`} </b>
                       </p>
                     </div>
                     <div
@@ -147,6 +147,7 @@ function Details() {
                         marginTop: "-18px",
                         color: "#79a987",
                         fontSize: "14px",
+                        marginTop:"0px"
                       }}
                     >
                       <b>inclusive of all taxes</b>
@@ -290,8 +291,8 @@ function Details() {
                         gap: "15px",
                       }}
                     >
-                      <p style={{ fontSize: "16px", color: "black" }}>
-                        <b>BEST OFFERS</b>{" "}
+                      <p >
+                        <b style={{ fontSize: "16px", color: "black" }}>BEST OFFERS</b>{" "}
                       </p>
                       <div style={{ color: "gray" }}>
                         <LocalOfferOutlinedIcon />
@@ -305,16 +306,16 @@ function Details() {
                       }}
                     >
                       {" "}
-                      <b>
+                      <b style={{fontSize:"16px"}}>
                         Best Price:
-                        <span style={{ color: "#ee9d20" }}>
+                        <span style={{ color: "#ee9d20" ,fontSize:"16px",}}>
                           {" "}
                           Rs.{ele.price}
                         </span>
                       </b>
                     </p>
-                    <ul style={{ marginLeft: "-26px" }}>
-                      <li>
+                    <ul >
+                      <li style={{background:"white"}}>
                         Applicable on: Orders above Rs. 3999 (only on first
                         purchase)
                       </li>
@@ -332,7 +333,7 @@ function Details() {
                     <p>
                       <b>EMI option available</b>
                     </p>
-                    <ul style={{ marginLeft: "-26px" }}>
+                    <ul>
                       <li>EMI starting from Rs.154/month</li>
                     </ul>
                     <p style={{ color: "#e7396a", fontWeight: "570" }}>
