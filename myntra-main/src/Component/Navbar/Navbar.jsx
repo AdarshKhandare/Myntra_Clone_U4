@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "../style/Navbar.module.css";
 // import styles from './Todo.module.css'
 import styled from "styled-components";
@@ -15,6 +15,7 @@ import { useSelect } from "@mui/base";
 import DealOftheDayCard from "../Home/DealOftheDayCard";
 import Badge from "@mui/material/Badge";
 import MailIcon from "@mui/icons-material/Mail";
+import { FilterContext } from "../../context/FilterContext";
 const MainDiv = styled.div`
   display: grid;
   grid-template-columns: 100px 500px 500px 200px;
@@ -53,7 +54,8 @@ function Navbar() {
   const navigate = useNavigate()
   const userAuth = useSelector((state) => state.loginreq.userAuth);
   const username = useSelector((state) => state.loginreq.username);
-
+  const { count } = useContext(FilterContext)
+  console.log(count)
   return (
     <>
       <div style={divStyle}>
@@ -924,7 +926,7 @@ function Navbar() {
             >
               {userAuth ? (
                 <Link to="/cart" style={{ textDecoration: "none" }}>
-                  <Badge color="secondary" badgeContent={0} showZero>
+                  <Badge color="secondary" badgeContent={count} >
                     <ShoppingBagOutlinedIcon style={{ color: "black" }} />
                   </Badge>
 
@@ -935,7 +937,7 @@ function Navbar() {
                 </Link>
               ) : (
                 <Link to="/login" style={{ textDecoration: "none" }}>
-                  <Badge color="secondary" badgeContent={0} showZero>
+                  <Badge color="secondary" badgeContent={count} >
                     <ShoppingBagOutlinedIcon style={{ color: "black" }} />
                   </Badge>
 

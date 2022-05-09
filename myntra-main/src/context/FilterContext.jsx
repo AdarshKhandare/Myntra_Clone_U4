@@ -7,8 +7,9 @@ export const FilterProvider = ({ children }) => {
   const [event, setEvent] = useState("");
   const [isChecked, setChecked] = useState(false);
   const [data, setData] = useState([]);
-  const [count, setCount] = useState(0);
+  var [count, setCount] = useState(0);
   const dispatch = useDispatch();
+
   const handleEvent = (e, c) => {
     setEvent(e);
     console.log(e);
@@ -19,13 +20,22 @@ export const FilterProvider = ({ children }) => {
     setData(e);
   };
   const addToData = (ele) => {
+    console.log(ele);
     dispatch(postBagData(ele));
-count = count+1
+    count = count + 1;
     setCount(count);
   };
   return (
     <FilterContext.Provider
-      value={{ event, handleEvent, isChecked, handleData, data, addToData ,count}}
+      value={{
+        event,
+        handleEvent,
+        isChecked,
+        handleData,
+        data,
+        addToData,
+        count,
+      }}
     >
       {children}
     </FilterContext.Provider>
