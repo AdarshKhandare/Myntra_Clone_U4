@@ -25,9 +25,9 @@ const Login = () => {
     e.preventDefault();
     try {
       const user = await signInWithEmailAndPassword(auth, email, password);
-      toast.success("🦄 Wow so easy!", {
+      toast.success("Login SuccessFull", {
         position: "top-right",
-        autoClose: 5000,
+        autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -37,9 +37,6 @@ const Login = () => {
       setInterval(function () {
         navigate("/cart");
       }, 5000);
-
-      navigate("/cart");
-
       console.log(user);
     } catch (error) {
       console.log(error.message);

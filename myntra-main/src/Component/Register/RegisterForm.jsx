@@ -32,7 +32,7 @@ const RegisterForm = () => {
         values.email,
         values.password
       );
-      toast.info("Registration Successful!");
+      toast.success("Registration Successful!");
       navigate("/login");
     } catch (error) {
       toast.error("Email Id Already Exists!");
@@ -122,7 +122,7 @@ const RegisterForm = () => {
           />
         ))}
         <SubmitButton onClick={handleRegisterdata}>Submit</SubmitButton>
-      <ToastContainer />
+        <ToastContainer />
       </Form>
       <p>
         Already having Account please

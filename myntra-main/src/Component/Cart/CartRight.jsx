@@ -64,11 +64,9 @@ const CartRightS = () => {
           <TotalAmountrs>₹{totalAmount}</TotalAmountrs>
         </TotalAmountdiv>
         <PlaceorderDiv>
-          <Link to="/address">
             <PlaceorderButton onClick={placeOrder}>
               PLACE ORDER
             </PlaceorderButton>
-          </Link>
         </PlaceorderDiv>
       </TotalPriceDiv>
     </CartRight>
