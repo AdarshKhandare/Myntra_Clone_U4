@@ -38,7 +38,7 @@ function InnerContent() {
     (state) => state.home.topinfluncerseclusive
   );
 
-  console.log("data", dealsOftheDay);
+  // console.log("data", dealsOftheDay);
   const dispatch = useDispatch();
   useEffect(() => {
     fetch(`http://localhost:5050/dealsofthday`)

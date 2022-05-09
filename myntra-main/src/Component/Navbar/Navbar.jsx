@@ -1,58 +1,55 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 import styles from "../style/Navbar.module.css";
 // import styles from './Todo.module.css'
-import styled from "styled-components"
+import styled from "styled-components";
 
 import { BrowserRouter, Route, Link, NavLink } from "react-router-dom";
-import SearchIcon from '@mui/icons-material/Search';
-import PermIdentityIcon from '@mui/icons-material/PermIdentity';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
-import { useDispatch, useSelector } from 'react-redux';
-import { rootShouldForwardProp } from '@mui/material/styles/styled';
-import { getDealsOftheData } from '../../redux/Home/actions';
-import { useSelect } from '@mui/base';
-import DealOftheDayCard from '../Home/DealOftheDayCard';
-import { Badge } from '@mui/material';
+import SearchIcon from "@mui/icons-material/Search";
+import PermIdentityIcon from "@mui/icons-material/PermIdentity";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
+import { useDispatch, useSelector } from "react-redux";
+import { rootShouldForwardProp } from "@mui/material/styles/styled";
+import { getDealsOftheData } from "../../redux/Home/actions";
+import { useSelect } from "@mui/base";
+import DealOftheDayCard from "../Home/DealOftheDayCard";
+import { Badge } from "@mui/material";
 
 const MainDiv = styled.div`
-display: grid;
-grid-template-columns: 100px 500px 500px 200px;
-background-color: whitesmoke;
-justify-content: space-around;
-height: 80px;
-box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);
-
-
-`
+  display: grid;
+  grid-template-columns: 100px 500px 500px 200px;
+  background-color: whitesmoke;
+  justify-content: space-around;
+  height: 80px;
+  box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);
+`;
 const Navlink = styled.div`
-textDecoration: "none", padding: "5px";
- color: "black";
-`
+  text-decoration: none;
+  padding: 5px;
+  color: black;
+`;
 const linkStyle = {
   textDecoration: "none",
   padding: "10px",
-  color: "black"
-}
+  color: "black",
+};
 const divStyle = {
   position: "sticky",
   top: "0%",
   backgroundColor: "#ffffff",
-  zIndex: "1"
-
-
-}
-const imgStyle = { height: "30px", margin: "20px" }
-const wish = { fontSize: "10px", paddingLeft: "10px" }
-const wishIcon = { marginTop: "15px" }
-const navStyles = { marginTop: "20px" }
-const searchBar = { display: "flex", marginTop: "20px", paddingLeft: "80px", backgroundColor: "whitesmoke" }
+  zIndex: "1",
+};
+const imgStyle = { height: "30px", margin: "20px" };
+const wish = { fontSize: "10px", paddingLeft: "10px" };
+const wishIcon = { marginTop: "15px" };
+const navStyles = { marginTop: "20px" };
+const searchBar = {
+  display: "flex",
+  marginTop: "20px",
+  paddingLeft: "80px",
+  backgroundColor: "whitesmoke",
+};
 function Navbar() {
-
-
-
-
-
   return (
     <>
       <div style={divStyle}>
@@ -232,7 +229,7 @@ function Navbar() {
                 </div>
               </li>
               <li className={styles.dropdown}>
-                <Link to="/men" className={styles.dropbtn} style={linkStyle}>
+                <Link to="/women" className={styles.dropbtn} style={linkStyle}>
                   {/* <a href="" className={styles.dropbtn} style={linkStyle} >MEN</a> */}
                   WOMEN
                 </Link>
@@ -860,7 +857,7 @@ function Navbar() {
                     <button
                       style={{ backgroundColor: "lightblue", margin: "10px" }}
                     >
-                      EXPLORE STUDION >
+                     { `EXPLORE STUDION >`}
                     </button>
                   </div>
                 </div>
@@ -920,4 +917,4 @@ function Navbar() {
   );
 }
 
-export default Navbar
+export default Navbar;
