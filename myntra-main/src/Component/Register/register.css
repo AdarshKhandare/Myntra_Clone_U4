@@ -1,4 +1,4 @@
-/* RegisterInput */
+/* RegisterInput
 .formInput{
     display: flex;
     flex-direction: column;
@@ -34,11 +34,11 @@ input:invalid[focused="true"]{
 
 input:invalid[focused="true"] ~ span{
     display: block;
-}
+} */
 
 
 /* RegisterForm */
-
+/* 
 .app {
   display: flex;
   flex-direction: column;
@@ -79,4 +79,4 @@ button{
     cursor: pointer;
     margin-top: 15px;
     margin-bottom: 30px;
-}
+} */

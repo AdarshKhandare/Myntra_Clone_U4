@@ -1,6 +1,6 @@
 .mainDiv{
     display: grid;
-    grid-template-columns: 100px 500px 500px 200px;
+    grid-template-columns: 100px 600px 400px 200px;
     background-color: whitesmoke;
     justify-content: space-around;
     height: 80px;
@@ -36,7 +36,10 @@ ul {
   }
   
   li a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
+   
+    border-bottom: "1px solid green";
+    border: "1px solid red";
+     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   }
   
   li.dropdown {
