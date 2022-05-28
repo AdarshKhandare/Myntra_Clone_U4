@@ -53,9 +53,9 @@ Axios: Axios
 
 Styled Components: Styled Components
 
-Contributors
-Adarsh M Khandare
-Affan Ahmad
+Contributors: 
+Adarsh M Khandare,
+Affan Ahmad and
 Shubham Shewale
 
 Images
