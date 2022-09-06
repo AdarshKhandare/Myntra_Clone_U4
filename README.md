@@ -13,7 +13,7 @@ Myntra is an Indian fashion e-commerce company headquartered in Bengaluru, India
 SignIn with Email Authentication using firebase
 SignUp
 Browse Products based on the section
-Search Products with color, and brands.
+Search Products with brands.
 Apply Filters
 Create, Update, Remove Products from Bag
 Payment Integration
@@ -53,7 +53,7 @@ Material UI & Styled-Components
 
 # **Contributors**: 
 - [Adarsh M. Khandare](https://www.linkedin.com/in/akhandare/).
-- [Affan Ahmad](https://www.linkedin.com/in/affan-ahmad-31bba9184/).
+- [Affan Ahmad]([https://www.linkedin.com/in/affan-ahmad-31bba9184/](https://github.com/AFFAN-AHMAD)).
 - [Shubham Shewale](https://www.linkedin.com/in/shubham-shewale-/).
 
 # **Images**:-
@@ -79,7 +79,7 @@ Material UI & Styled-Components
 
 # **Product page**
 
-## Created by[Affan Ahmad](https://www.linkedin.com/in/affan-ahmad-31bba9184/).
+## Created by[Affan Ahmad]([https://www.linkedin.com/in/affan-ahmad-31bba9184/](https://github.com/AFFAN-AHMAD)).
 
 
 ![myntra5](https://user-images.githubusercontent.com/99638448/171442173-1938072b-31aa-4653-9eb8-a25f77f2aabd.png)
