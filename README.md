@@ -79,7 +79,7 @@ Material UI & Styled-Components
 
 # **Product page**
 
-## Created by[Affan Ahmad]([https://www.linkedin.com/in/affan-ahmad-31bba9184/](https://github.com/AFFAN-AHMAD)).
+## Created by [Affan Ahmad]([https://www.linkedin.com/in/affan-ahmad-31bba9184/](https://github.com/AFFAN-AHMAD)).
 
 
 ![myntra5](https://user-images.githubusercontent.com/99638448/171442173-1938072b-31aa-4653-9eb8-a25f77f2aabd.png)
