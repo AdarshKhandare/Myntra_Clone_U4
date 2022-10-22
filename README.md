@@ -83,6 +83,11 @@ Material UI & Styled-Components
 
 
 ![myntra5](https://user-images.githubusercontent.com/99638448/171442173-1938072b-31aa-4653-9eb8-a25f77f2aabd.png)
+
+# **Product Details page**
+
+## Created by [Affan Ahmad]([https://www.linkedin.com/in/affan-ahmad-31bba9184/](https://github.com/AFFAN-AHMAD)).
+
 ![myntra6](https://user-images.githubusercontent.com/99638448/171442187-fbf84075-f9b9-459c-ac72-32c34e8147d7.png)
 
 
